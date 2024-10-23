@@ -1,0 +1,36 @@
+@startuml createRobotSD
+autonumber
+
+skinparam sequence {
+    ParticipantBorderColor black
+    ParticipantBackgroundColor white
+}
+
+
+
+box "<<RobDroneGo(C4)>>\n\tSystem"
+participant FleetManagement as  FM <<Container(C4)>>
+end box
+
+
+ -> FM: POST createRobot(robotDTO)
+activate FM
+
+alt If the Robot doesn't exist 
+ <-- FM: 200 OK(createdObj)
+
+else If a Robot already exists with the typed id
+ <-- FM: 400 Bad Request
+
+else If the attributes do not respect the business rules
+
+
+<-- FM: 400 Bad Request
+deactivate FM
+
+
+
+end
+
+
+@enduml

@@ -1,0 +1,104 @@
+<app-home></app-home>
+<div class="menu-container">
+    <h2>Requisição de uma Tarefa</h2>
+    <form #tarefaForm="ngForm" (ngSubmit)="createTarefa(tarefaCodigo.value, tarefaDescricao.value, 
+    tarefaRobot, tarefaContactoRequisitante.value, selectedTipoDeTarefa,
+    tarefaContactoIncidente, tarefaEdificio, tarefaPisos,
+    tarefaSalaRecolha, tarefaSalaEntrega, tarefaContactoRecolha, tarefaContactoEntrega)">
+
+        <div class="form-input">
+            <label for="new-tarefa">Código: </label>
+            <input id="new-tarefa" type="text" #tarefaCodigo="ngModel" ngModel name="tarefaCodigo" />
+            <div *ngIf="tarefaCodigo.errors?.['required']">Codigo é obrigatório</div>
+        </div>
+
+        <div class="form-input">
+            <label for="new-tarefa">Descrição: </label>
+            <input id="new-tarefa" type="text" #tarefaDescricao="ngModel" ngModel name="tarefaDescricao" />
+            <div *ngIf="tarefaDescricao.errors?.['required']">Descrição é obrigatório</div>
+        </div>
+
+        <div class="form-input">
+            <label for="new-tarefa">Número de Série do Robot: </label>
+            <select id="new-tarefa" [(ngModel)]="tarefaRobot" name="tarefaRobot">
+              <option *ngFor="let robot of robots" [value]="robot.numeroSerie">{{ robot.numeroSerie }}</option>
+            </select>
+        </div>
+
+        <div class="form-input">
+            <label for="new-tarefa">Contacto do Requisitante: </label>
+            <input id="new-tarefa" type="text" #tarefaContactoRequisitante="ngModel" ngModel name="tarefaContactoRequisitante" />
+            <div *ngIf="tarefaContactoRequisitante.errors?.['required']">Contacto do Requisitante é obrigatório</div>
+        </div>
+
+        <div class="form-input">
+            <label for="new-tarefa">Tipo de Tarefa: </label>
+            <select id="new-tarefa" [(ngModel)]="selectedTipoDeTarefa" name="tarefaTipoDeTarefa">
+                <option value="vigilancia">Vigilancia</option>
+                <option value="entrega de objetos">Entrega de Objetos</option>
+            </select>
+        </div>
+
+        <!-- Fields for "vigilancia" -->
+
+        <div class="form-input" *ngIf="selectedTipoDeTarefa === 'vigilancia'">
+            <label for="new-tarefa">Id do Edificio: </label>
+            <select id="new-tarefa" type="text" [(ngModel)]="tarefaEdificio" name="tarefaEdificio" (change)="onEdificioChange()">
+                <option *ngFor="let edificio of edificios" [value]="edificio.codigo">{{ edificio.codigo }}</option>
+            </select>
+        </div>
+
+        <div class="form-input" *ngIf="selectedTipoDeTarefa === 'vigilancia'">
+            <label for="new-tarefa">Lista de Ids dos Pisos: </label>
+            <input id="new-tarefa" type="text" [value]="getPisosString()" readonly />
+        </div>
+        
+        <div class="form-input" *ngIf="selectedTipoDeTarefa === 'vigilancia'">
+            <label for="new-tarefa">Ids dos Pisos: </label>
+            <input id="new-tarefa" type="text" [(ngModel)]="tarefaPisos" name="tarefaPisos" />
+        </div>
+
+        <div class="form-input" *ngIf="selectedTipoDeTarefa === 'vigilancia'">
+            <label for="new-tarefa">Contacto em caso de Incidente: </label>
+            <input id="new-tarefa" type="text" [(ngModel)]="tarefaContactoIncidente" name="tarefaContactoIncidente">
+        </div>
+
+        <!-- Fields for "entrega de objetos" -->
+        <div class="form-input" *ngIf="selectedTipoDeTarefa === 'entrega de objetos'">
+            <label for="new-tarefa">Sala da Recolha: </label>
+            <select id="new-tarefa" type="text" [(ngModel)]="tarefaSalaRecolha" name="tarefaSalaRecolha">
+                <option *ngFor="let sala of salas" [value]="sala.nome" [disabled]="sala.nome === tarefaSalaEntrega">
+                    <ng-container *ngIf="sala.nome !== tarefaSalaEntrega">
+                        {{ sala.nome }} do Piso {{ sala.piso }} do Edificio {{ sala.edificio }}
+                    </ng-container>
+                </option>
+            </select>
+        </div>
+        
+        <div class="form-input" *ngIf="selectedTipoDeTarefa === 'entrega de objetos'">
+            <label for="new-tarefa">Sala da Entrega: </label>
+            <select id="new-tarefa" type="text" [(ngModel)]="tarefaSalaEntrega" name="tarefaSalaEntrega">
+                <option *ngFor="let sala of salas" [value]="sala.nome" [disabled]="sala.nome === tarefaSalaRecolha">
+                    <ng-container *ngIf="sala.nome !== tarefaSalaRecolha">
+                        {{ sala.nome }} do Piso {{ sala.piso }} do Edificio {{ sala.edificio }}
+                    </ng-container>
+                </option>
+            </select>
+        </div>
+        
+        <div class="form-input" *ngIf="selectedTipoDeTarefa === 'entrega de objetos'">
+            <label for="new-tarefa">Contacto da Recolha: </label>
+            <input id="new-tarefa" type="text" [(ngModel)]="tarefaContactoRecolha" name="tarefaContactoRecolha">
+        </div>
+        
+        <div class="form-input" *ngIf="selectedTipoDeTarefa === 'entrega de objetos'">
+            <label for="new-tarefa">Contacto da Entrega: </label>
+            <input id="new-tarefa" type="text" [(ngModel)]="tarefaContactoEntrega" name="tarefaContactoEntrega">
+        </div>
+    
+        <div class="form-buttons">
+            <button type="submit" class="registar-button" id="registar-button">Requisitar</button>
+            <button class="registar-button" (click)="goBack()">Voltar</button>
+        </div>
+    </form>
+</div>

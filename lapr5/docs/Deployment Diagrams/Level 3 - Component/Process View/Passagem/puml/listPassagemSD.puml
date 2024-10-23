@@ -1,0 +1,90 @@
+@startuml listPassagemSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+
+!pragma teoz true
+box "<<System(C4)>>\n RobDroneGo" #LightSkyBlue
+    box "<<Container(C4)>>\n Campus Management" #LightGreen
+
+        box "<<Component(C4)>>\nInterface Adapter Layer" #Cyan
+            participant IPassagemController as  ICTL <<Component(C4)>>
+            participant PassagemController as  CTL <<Component(C4)>>
+            participant PassagemRepository as  DR <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nApplication Services Layer" #Red
+            participant PassagemService as  SV <<Component(C4)>>
+            participant IPassagemService as  ISV <<Component(C4)>>
+            participant IPassagemRepo as  IER <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nEntities\Core\Domanin Layer" #Yellow
+            participant "Passagem : Passagem" as  Passagem <<Component(C4)>>
+        end box
+    participant "PassagemDTO : PassagemDTO" as  DTO <<Component(C4)>>
+
+    end box
+end box   
+
+
+
+ -> CTL: GET getAllPassagem()
+activate CTL
+alt If there are Passagem on the system
+
+
+    CTL -> SV : getAllPassagem()
+    activate SV
+
+    SV -> DR : getAll()
+    activate DR
+
+    DR --> SV : PassagemList
+    deactivate DR
+
+
+    SV -> DTO : toDTO(PassagemList)
+    activate DTO 
+    DTO -> DTO: toDTO(PassagemList)
+    DTO --> SV : List
+    deactivate DTO
+    deactivate DR
+    SV --> CTL: List
+    deactivate SV
+
+     <-- CTL: 200 OK + List
+    deactivate CTL
+
+else If there are no Passagem on the system
+    
+    
+    CTL -> SV : getAllPassagem() 
+    activate SV
+    activate CTL
+    
+  
+
+    
+    SV -> DR : getAll()
+    activate DR
+
+    DR -> SV : null
+    deactivate DR
+
+    SV --> CTL : null
+    deactivate SV
+     <-- CTL: 200 OK + null (empty List)
+    deactivate CTL
+
+    
+   
+
+
+
+end
+
+@enduml

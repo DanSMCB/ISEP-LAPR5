@@ -1,0 +1,39 @@
+<app-home></app-home>
+<div class="menu-container">
+  <h2>Upload do Mapa de um Piso</h2>
+  <form #pisoForm="ngForm" (ngSubmit)="loadValidateFloor(pisoData)">
+    <div class="form-group">
+      <div class="input-group">
+        <label for="new-edificio">Edificio: </label>
+        <input id="new-edificio" name="edificio" type="text" [(ngModel)]="pisoData.edificio" ngModel #edificio="ngModel" required />
+      </div>
+
+      <div class="input-group">
+        <label for="new-piso">Piso: </label>
+        <input id="new-piso" name="piso" type="text" [(ngModel)]="pisoData.piso" ngModel #piso="ngModel" required />
+      </div>
+
+      <div class="input-group">
+        <label for="new-descricao">Descricao: </label>
+        <input id="new-descricao" name="descricao" type="text" [(ngModel)]="pisoData.descricao" ngModel #descricao="ngModel" />
+      </div>
+
+      <div class="input-group">
+        <label for="new-passagens">Passagens: </label>
+        <input id="new-passagens" name="passagens" type="text" [(ngModel)]="pisoData.passagens" ngModel #passagens="ngModel" />
+      </div>
+
+      <div class="input-group">
+        <label for="new-salas">Salas: </label>
+        <input id="new-salas" name="salas" type="text" [(ngModel)]="pisoData.salas" ngModel #salas="ngModel" />
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit" class="registar-button" id="registar-button">
+          Submeter
+        </button>
+        <button class="registar-button" (click)="goBack()">Voltar</button>
+      </div>
+    </div>
+  </form>
+</div>

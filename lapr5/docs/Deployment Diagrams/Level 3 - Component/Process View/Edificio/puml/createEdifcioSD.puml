@@ -1,0 +1,115 @@
+@startuml createEdificioSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+!pragma teoz true
+box "<<System(C4)>>\n RobDroneGo" #LightSkyBlue
+    box "<<Container(C4)>>\n Campus Management" #LightGreen
+
+        box "<<Component(C4)>>\nInterface Adapter Layer" #Cyan
+            participant IEdificioController as  ICTL <<Component(C4)>>
+            participant EdificioController as  CTL <<Component(C4)>>
+            participant EdificioRepository as  DR <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nApplication Services Layer" #Red
+            participant EdificioService as  SV <<Component(C4)>>
+            participant IEdificioService as  ISV <<Component(C4)>>
+            participant IEdificioRepo as  IER <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nEntities\Core\Domanin Layer" #Yellow
+            participant "Edificio : Edificio" as  edificio <<Component(C4)>>
+        end box
+    participant "EdificioDTO : EdificioDTO" as  DTO <<Component(C4)>>
+
+    end box
+end box   
+
+
+ -> CTL: POST Post(EdificioDto)
+alt If the Edificio doesn't exist in the system
+activate CTL
+CTL -> SV : CreateEdificio(EdificioDto)
+activate SV
+
+SV -> edificio : Create(EdificioDto)
+activate edificio
+edificio --> SV : Edificio
+deactivate edificio
+
+SV -> DR : save(Edificio)
+activate DR
+DR --> SV : true
+deactivate DR
+
+SV -> DTO : toEdificioDTO(edificio)
+activate DTO
+DTO --> SV : EdificioDto
+deactivate DTO
+SV --> CTL : EdificioDto
+deactivate SV
+ <-- CTL : EdificioDto
+
+ <-- CTL: 200 OK
+deactivate CTL
+
+
+
+
+
+else If a Edificio already exists with the id entered
+
+
+
+
+CTL -> SV : CreateEdificio(EdificioDto)
+activate CTL
+activate SV
+
+SV -> edificio : Create(EdificioDto)
+activate edificio
+edificio --> SV : Edificio
+deactivate edificio
+
+SV -> DR : save(Edificio)
+activate DR
+DR --> SV : false
+deactivate DR
+SV --> CTL : BadRequestException
+deactivate SV
+ <-- CTL : BadRequestException
+
+
+ <-- CTL: 400 BAD REQUEST
+deactivate CTL
+
+
+
+
+else If the attributes do not respect the business rules
+
+
+CTL -> SV : CreateEdificio(EdificioDto)
+activate CTL
+activate SV
+
+SV -> edificio : Create(EdificioDto)
+activate edificio
+edificio --> SV : BusinessRuleValidationException
+deactivate edificio
+
+SV --> CTL : BusinessRuleValidationException
+deactivate SV
+ <-- CTL : BusinessRuleValidationException
+
+ <-- CTL: 400 BAD REQUEST
+deactivate CTL
+
+
+end
+
+@enduml

@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="login.component.css">
+        <title>Login</title>
+    </head>
+    <body>
+        <div class="login-container">
+            <h2>Selecione o seu cargo:</h2>
+          
+            <select [(ngModel)]="selectedRole" class="role-dropdown">
+              <option value="administrador-sistema">Administrador de Sistema</option>
+              <option value="gestor-campus">Gestor de Campus</option>
+              <option value="gestor-frota">Gestor de Frota</option>
+              <option value="gestor-tarefas">Gestor de Tarefas</option>
+              <option value="utente">Utente</option>
+            </select>
+          
+            <button (click)="login()" class="login-button">Login</button>
+          </div>
+    </body>
+</html>

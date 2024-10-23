@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { RGPDComponent } from './rgpd.component';
+
+describe('RGPDComponent', () => {
+  let component: RGPDComponent;
+  let fixture: ComponentFixture<RGPDComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [RGPDComponent]
+    });
+    fixture = TestBed.createComponent(RGPDComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

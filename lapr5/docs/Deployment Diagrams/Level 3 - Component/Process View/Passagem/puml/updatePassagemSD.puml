@@ -1,0 +1,121 @@
+@startuml updatePassagemSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+!pragma teoz true
+box "<<System(C4)>>\n RobDroneGo" #LightSkyBlue
+    box "<<Container(C4)>>\n Campus Management" #LightGreen
+
+        box "<<Component(C4)>>\nInterface Adapter Layer" #Cyan
+            participant IPassagemController as  ICTL <<Component(C4)>>
+            participant PassagemController as  CTL <<Component(C4)>>
+            participant PassagemRepository as  DR <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nApplication Services Layer" #Red
+            participant PassagemService as  SV <<Component(C4)>>
+            participant IPassagemService as  ISV <<Component(C4)>>
+            participant IPassagemRepo as  IER <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nEntities\Core\Domanin Layer" #Yellow
+            participant "Passagem : Passagem" as  Passagem <<Component(C4)>>
+        end box
+    participant "PassagemDTO : PassagemDTO" as  DTO <<Component(C4)>>
+
+    end box
+end box
+
+
+ -> CTL: PUT Put(PassagemDto)
+ activate CTL
+alt If the Passagem exists in the system
+
+
+    CTL -> SV : UpdatingPassagem(PassagemDto)
+    activate SV
+    
+
+    SV -> DR: GetByID(PassagemId)
+    activate DR
+    DR --> SV: Passagem
+    deactivate DR
+
+    SV -> Passagem : Update(PassagemDTO)
+    activate Passagem
+    Passagem --> SV : Passagem
+    deactivate Passagem
+
+    SV -> DR : save(Passagem)
+    activate DR
+    DR --> SV : true
+     deactivate DR
+    SV -> DTO : toPassagemDTO(Passagem)
+    activate DTO
+    DTO -> DTO: toDTO(Passagem)
+    
+    DTO --> SV : PassagemDTO
+    deactivate DTO
+    SV -> CTL : PassagemDTO
+    deactivate SV
+     <-- CTL : PassagemDto + 200 OK
+     deactivate CTL
+
+
+
+
+else If a Passagem already exists with the id entered
+
+
+
+
+CTL -> SV : CreatePassagem(PassagemDto)
+activate CTL
+activate SV
+
+SV -> Passagem : Create(PassagemDto)
+activate Passagem
+Passagem --> SV : Passagem
+deactivate Passagem
+
+SV -> DR : save(Passagem)
+activate DR
+DR --> SV : false
+deactivate DR
+SV --> CTL : BadRequestException
+deactivate SV
+ <-- CTL : BadRequestException
+
+
+ <-- CTL: 400 BAD REQUEST
+deactivate CTL
+
+
+
+
+else If the attributes do not respect the business rules
+
+
+CTL -> SV : CreatePassagem(PassagemDto)
+activate CTL
+activate SV
+
+SV -> Passagem : Create(PassagemDto)
+activate Passagem
+Passagem --> SV : BusinessRuleValidationException
+deactivate Passagem
+
+SV --> CTL : BusinessRuleValidationException
+deactivate SV
+ <-- CTL : BusinessRuleValidationException
+
+ <-- CTL: 400 BAD REQUEST
+deactivate CTL
+
+
+end
+
+@enduml

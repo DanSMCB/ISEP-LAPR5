@@ -1,0 +1,34 @@
+<html>
+<head>
+    <link rel="stylesheet" href="login.component.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="menu-container">
+        <h2>Login</h2>
+        <form #utilizadorForm="ngForm" (ngSubmit)="loginUser(email.value, password.value)">
+            <div class="form-input">
+              <label for="utilizador">Email: </label>
+              <input id="utilizador" type="text" #email="ngModel" ngModel name="email" />
+              <div *ngIf="email.errors?.['required']">Email é obrigatório</div>
+            </div>
+  
+            <div class="form-input">
+              <label for="utilizador">Password: </label>
+              <input id="utilizador-pass" type="password" #password="ngModel" ngModel name="password" />
+              <div *ngIf="password.errors?.['required']">Password é obrigatória</div>
+              <div class="checkbox-container">
+                <input type="checkbox" id="showPassword" (change)="togglePasswordVisibility($event)">
+                <label for="showPassword">Mostrar senha</label>
+            </div>
+            </div>
+
+            <button class="login-button" type="submit">Entrar</button>
+
+            <p class="register-text">Não tem uma conta? <a [routerLink]="['/Recolha']">Registe-se aqui</a></p>
+        </form>
+    </div>
+</body>
+
+</html>

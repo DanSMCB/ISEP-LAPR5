@@ -1,0 +1,90 @@
+@startuml listElevadorSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+
+!pragma teoz true
+box "<<System(C4)>>\n RobDroneGo" #LightSkyBlue
+    box "<<Container(C4)>>\n Campus Management" #LightGreen
+
+        box "<<Component(C4)>>\nInterface Adapter Layer" #Cyan
+            participant IElevadorController as  ICTL <<Component(C4)>>
+            participant ElevadorController as  CTL <<Component(C4)>>
+            participant ElevadorRepository as  DR <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nApplication Services Layer" #Red
+            participant ElevadorService as  SV <<Component(C4)>>
+            participant IElevadorService as  ISV <<Component(C4)>>
+            participant IElevadorRepo as  IER <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nEntities\Core\Domanin Layer" #Yellow
+            participant "Elevador : Elevador" as  Elevador <<Component(C4)>>
+        end box
+    participant "ElevadorDTO : ElevadorDTO" as  DTO <<Component(C4)>>
+
+    end box
+end box   
+
+
+
+ -> CTL: GET getAllElevador()
+activate CTL
+alt If there are Elevador on the system
+
+
+    CTL -> SV : getAllElevador()
+    activate SV
+
+    SV -> DR : getAll()
+    activate DR
+
+    DR --> SV : ElevadorList
+    deactivate DR
+
+
+    SV -> DTO : toDTO(ElevadorList)
+    activate DTO 
+    DTO -> DTO: toDTO(ElevadorList)
+    DTO --> SV : List
+    deactivate DTO
+    deactivate DR
+    SV --> CTL: List
+    deactivate SV
+
+     <-- CTL: 200 OK + List
+    deactivate CTL
+
+else If there are no Elevador on the system
+    
+    
+    CTL -> SV : getAllElevador() 
+    activate SV
+    activate CTL
+    
+  
+
+    
+    SV -> DR : getAll()
+    activate DR
+
+    DR -> SV : null
+    deactivate DR
+
+    SV --> CTL : null
+    deactivate SV
+     <-- CTL: 200 OK + null (empty List)
+    deactivate CTL
+
+    
+   
+
+
+
+end
+
+@enduml

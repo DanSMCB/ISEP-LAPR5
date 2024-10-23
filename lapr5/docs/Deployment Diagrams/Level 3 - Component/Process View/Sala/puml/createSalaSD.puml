@@ -1,0 +1,113 @@
+@startuml createSalaSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+!pragma teoz true
+box "<<Container(C4)>>\n Campus Management" #LightGreen
+
+    box "<<Component(C4)>>\nInterface Adapter Layer" #Cyan
+        participant ISalaController as  ICTL <<Component(C4)>>
+        participant SalaController as  CTL <<Component(C4)>>
+        participant SalaRepository as  DR <<Component(C4)>>
+    end box
+      box "<<Component(C4)>>\nApplication Services Layer" #Red
+        participant SalaService as  SV <<Component(C4)>>
+        participant ISalaService as  ISV <<Component(C4)>>
+        participant ISalaRepo as  IER <<Component(C4)>>
+      end box
+      box "<<Component(C4)>>\nEntities\Core\Domanin Layer" #Yellow
+        participant "Sala : Sala" as  Sala <<Component(C4)>>
+      end box
+participant "SalaDTO : SalaDTO" as  DTO <<Component(C4)>>
+
+end box
+
+
+ -> CTL: POST Post(SalaDto)
+alt If the Sala doesn't exist in the system
+activate CTL
+CTL -> SV : CreateSala(SalaDto)
+activate SV
+
+SV -> Sala : Create(SalaDto)
+activate Sala
+Sala --> SV : Sala
+deactivate Sala
+
+SV -> DR : save(Sala)
+activate DR
+DR --> SV : true
+deactivate DR
+
+SV -> DTO : toSalaDTO(Sala)
+activate DTO
+DTO --> SV : SalaDto
+deactivate DTO
+SV --> CTL : SalaDto
+deactivate SV
+ <-- CTL : SalaDto
+
+ <-- CTL: 200 OK
+deactivate CTL
+
+
+
+
+
+else If a Sala already exists with the id entered
+
+
+
+
+CTL -> SV : CreateSala(SalaDto)
+activate CTL
+activate SV
+
+SV -> Sala : Create(SalaDto)
+activate Sala
+Sala --> SV : Sala
+deactivate Sala
+
+SV -> DR : save(Sala)
+activate DR
+DR --> SV : false
+deactivate DR
+SV --> CTL : BadRequestException
+deactivate SV
+ <-- CTL : BadRequestException
+
+
+ <-- CTL: 400 BAD REQUEST
+deactivate CTL
+
+
+
+
+else If the attributes do not respect the business rules
+
+
+CTL -> SV : CreateSala(SalaDto)
+activate CTL
+activate SV
+
+SV -> Sala : Create(SalaDto)
+activate Sala
+Sala --> SV : BusinessRuleValidationException
+deactivate Sala
+
+SV --> CTL : BusinessRuleValidationException
+deactivate SV
+ <-- CTL : BusinessRuleValidationException
+
+ <-- CTL: 400 BAD REQUEST
+deactivate CTL
+
+
+end
+
+@enduml

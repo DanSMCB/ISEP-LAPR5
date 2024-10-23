@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="671px" preserveAspectRatio="none" style="width:961px;height:671px;background:#FFFFFF;" version="1.1" viewBox="0 0 961 671" width="961px" zoomAndPan="magnify"><defs/><g><!--MD5=[a79645e74fdddf168a098e501fbfe8e0]
+cluster c2--><g id="cluster_c2"><rect fill="none" height="495" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="837" x="7" y="170"/><rect fill="none" height="10" style="stroke:#181818;stroke-width:1.0;" width="15" x="824" y="175"/><rect fill="none" height="2" style="stroke:#181818;stroke-width:1.0;" width="4" x="822" y="177"/><rect fill="none" height="2" style="stroke:#181818;stroke-width:1.0;" width="4" x="822" y="181"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="137" x="357" y="195.9951">&lt;&lt;component&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="143" x="354" y="212.292">&lt;&lt;Context(C4)&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="100" x="375.5" y="228.5889">RobDroneGo</text></g><!--MD5=[a144d729a3222039e03ab008fc169880]
+cluster tmc--><g id="cluster_tmc"><rect fill="none" height="192.5" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="148" x="208" y="267.5"/><rect fill="none" height="10" style="stroke:#181818;stroke-width:1.0;" width="15" x="336" y="272.5"/><rect fill="none" height="2" style="stroke:#181818;stroke-width:1.0;" width="4" x="334" y="274.5"/><rect fill="none" height="2" style="stroke:#181818;stroke-width:1.0;" width="4" x="334" y="278.5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="137" x="213.5" y="293.4951">&lt;&lt;component&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="138" x="213" y="309.792">TaskManagement</text></g><!--MD5=[1e6c2d9fd7877817415c50f25fac9ce7]
+cluster fmc--><g id="cluster_fmc"><rect fill="none" height="192.5" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="166" x="411" y="267.5"/><rect fill="none" height="10" style="stroke:#181818;stroke-width:1.0;" width="15" x="557" y="272.5"/><rect fill="none" height="2" style="stroke:#181818;stroke-width:1.0;" width="4" x="555" y="274.5"/><rect fill="none" height="2" style="stroke:#181818;stroke-width:1.0;" width="4" x="555" y="278.5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="137" x="425.5" y="293.4951">&lt;&lt;component&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="140" x="424" y="309.792">FleetManagement</text></g><!--MD5=[e74b56bb090aea07c2660268f5b2aa03]
+cluster cmc--><g id="cluster_cmc"><rect fill="none" height="192.5" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="174" x="617.5" y="267.5"/><rect fill="none" height="10" style="stroke:#181818;stroke-width:1.0;" width="15" x="771.5" y="272.5"/><rect fill="none" height="2" style="stroke:#181818;stroke-width:1.0;" width="4" x="769.5" y="274.5"/><rect fill="none" height="2" style="stroke:#181818;stroke-width:1.0;" width="4" x="769.5" y="278.5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="137" x="636" y="293.4951">&lt;&lt;component&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="164" x="622.5" y="309.792">CampusManagement</text></g><!--MD5=[b7b14e8444e3c5d78ccf181a2614e889]
+cluster pc--><g id="cluster_pc"><rect fill="none" height="117" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="147" x="422" y="532"/><rect fill="none" height="10" style="stroke:#181818;stroke-width:1.0;" width="15" x="549" y="537"/><rect fill="none" height="2" style="stroke:#181818;stroke-width:1.0;" width="4" x="547" y="539"/><rect fill="none" height="2" style="stroke:#181818;stroke-width:1.0;" width="4" x="547" y="543"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="137" x="427" y="557.9951">&lt;&lt;component&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="67" x="462" y="574.292">Planning</text></g><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="231.5" y="148.6982">1</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="230" y="164"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="278.5" y="148.6982">2</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="277" y="164"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="413.5" y="148.6982">3</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="412" y="164"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="517.5" y="148.6982">4</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="516" y="164"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="714.5" y="148.6982">5</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="713" y="164"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="821.5" y="148.6982">6</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="820" y="164"/><!--MD5=[f1e74cb32cdfeeb02472d6676bcc6245]
+entity umc--><g id="elem_umc"><rect fill="#F1F1F1" height="62.5938" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="163" x="23.5" y="236"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="166.5" y="241"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="164.5" y="243"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="164.5" y="247"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="38.5" y="268.9951">«component»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="38.5" y="285.292">UserManagement</text></g><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="231.5" y="246.1982">7</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="230" y="261.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="278.5" y="246.1982">8</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="277" y="261.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="319" y="478.9951">16</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="322" y="454"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="424.5" y="246.1982">9</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="423" y="261.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="474" y="246.1982">10</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="477" y="261.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="474" y="478.9951">17</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="477" y="454"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="708" y="246.1982">11</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="711" y="261.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="755" y="246.1982">12</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="758" y="261.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="636" y="478.9951">18</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="639" y="454"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="427" y="510.6982">13</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="430" y="526"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="474" y="510.6982">14</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="477" y="526"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="521" y="510.6982">15</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="524" y="526"/><!--MD5=[2351bbbb3f6d0a84cf05e128b2a0f454]
+entity UT--><g id="elem_UT"><ellipse cx="171" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="143" y="43.9951">UITarefa</text></g><!--MD5=[0c9b9a497f1ce102fa74e80bd894519e]
+entity AT--><g id="elem_AT"><ellipse cx="282" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="250" y="43.9951">APITarefa</text></g><!--MD5=[1f6a878ce590bf1467e798d6ee491737]
+entity UGF--><g id="elem_UGF"><ellipse cx="412" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="364.5" y="43.9951">UIGestorFrota</text></g><!--MD5=[f67b8f43f42bcdfd3026313bb1f32d40]
+entity AGF--><g id="elem_AGF"><ellipse cx="561" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="509.5" y="43.9951">APIGestorFrota</text></g><!--MD5=[de786a1a9388ef9c1c4270399413c7a8]
+entity UGC--><g id="elem_UGC"><ellipse cx="721" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="662.5" y="43.9951">UIGestorCampus</text></g><!--MD5=[a12803c443722aa07c3cc5b9e3fb308b]
+entity AGC--><g id="elem_AGC"><ellipse cx="892" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="829.5" y="43.9951">APIGestorCampus</text></g><!--MD5=[15ba3654ad81623a6c08c87ac52db10a]
+link UT to 1--><g id="link_UT_1"><path d="M174.49,23.28 C186.26,51.14 224.2,141.04 233.78,163.75 " fill="none" id="UT-1" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[93e562f1b9ba89e9348ddfcb873de2fa]
+link AT to 2--><g id="link_AT_2"><path d="M282.05,23.28 C282.23,51.14 282.82,141.04 282.97,163.75 " fill="none" id="AT-2" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[5aa45f5b6deb593461f2dc897facc43f]
+link UGF to 3--><g id="link_UGF_3"><path d="M412.32,23.28 C413.41,51.14 416.91,141.04 417.8,163.75 " fill="none" id="UGF-3" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[91b983348ce754c865514a1e4bf78399]
+link AGF to 4--><g id="link_AGF_4"><path d="M558.9,23.28 C551.85,51.14 529.08,141.04 523.33,163.75 " fill="none" id="AGF-4" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[5e5a09b7cb4f00305552c2f27d2207fc]
+link UGC to 5--><g id="link_UGC_5"><path d="M720.89,23.28 C720.53,51.14 719.36,141.04 719.07,163.75 " fill="none" id="UGC-5" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[ce8021d4b8b558be58650f1e6088edb3]
+link AGC to 6--><g id="link_AGC_6"><path d="M888.45,23.28 C876.51,51.14 837.98,141.04 828.25,163.75 " fill="none" id="AGC-6" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[e6222b2765c817e721b4e19585b3bd91]
+link 1 to 7--><g id="link_1_7"><path d="M236,176.13 C236,192.72 236,244.72 236,261.34 " fill="none" id="1-7" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[0ad92ee86b71fc92e123e5500ea78341]
+link 2 to 8--><g id="link_2_8"><path d="M283,176.13 C283,192.72 283,244.72 283,261.34 " fill="none" id="2-8" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[8a69e3c75cf09f4bd844171d774a0572]
+link 3 to 9--><g id="link_3_9"><path d="M418.59,176.13 C420.5,192.72 426.49,244.72 428.41,261.34 " fill="none" id="3-9" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[b4b1e6e362150985aec918556aaa5b43]
+link 4 to 10--><g id="link_4_10"><path d="M519.9,176.13 C513.13,192.72 491.89,244.72 485.11,261.34 " fill="none" id="4-10" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[181ebb658da827b46b9db794cb2d177a]
+link 5 to 11--><g id="link_5_11"><path d="M718.89,176.13 C718.55,192.72 717.46,244.72 717.11,261.34 " fill="none" id="5-11" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[0b34f7617b237eaba08cad36d4f447b7]
+link 6 to 12--><g id="link_6_12"><path d="M819.83,175.95 C808.9,185.07 786.13,205.63 774,228 C768.01,239.05 765.48,253.85 764.52,261.48 " fill="none" id="6-12" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[e22b9f36478b525811a8c4802b0cbe02]
+link 16 to 13--><g id="link_16_13"><path d="M334.12,464.96 C353.13,477.28 411.03,514.82 429.95,527.08 " fill="none" id="16-13" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[f811753f587501b8ca6fb40827465db9]
+link 17 to 14--><g id="link_17_14"><path d="M483,466.03 C483,478.82 483,512.48 483,525.63 " fill="none" id="17-14" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[46df5777aacd23d694d83220ebd1a790]
+link 18 to 15--><g id="link_18_15"><path d="M638.82,464.76 C618.85,476.92 556.22,515.04 536.21,527.22 " fill="none" id="18-15" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[7d2fa91539e19e25382f09502e41b7e2]
+@startuml
+component "<<component>>\n<<Context(C4)>>\nRobDroneGo" as c2 {
+  port 1
+  port 2
+  port 3
+  port 4
+  port 5
+  port 6
+  component "<<component>>\nTaskManagement" as tmc{
+    port 7 
+    port 8
+    portout 16
+  }
+  component "<<component>>\nFleetManagement" as fmc{
+    port 9
+    port 10
+    portout 17
+  }
+  component "<<component>>\nCampusManagement" as cmc{
+    port 11
+    port 12
+    portout 18
+  }
+  
+  component "<<component>>\nPlanning" as pc{
+    port 13
+    port 14
+    port 15
+  }
+  component "<<component>>\nUserManagement" as umc
+
+
+}
+
+interface UITarefa as UT
+interface APITarefa as AT
+interface UIGestorFrota as UGF
+interface APIGestorFrota as AGF
+interface UIGestorCampus as UGC
+interface APIGestorCampus as AGC
+
+
+
+
+UT - - - 1
+AT - - - 2
+UGF - - - 3
+AGF - - - 4
+UGC - - - 5
+AGC - - - 6
+
+1 - - 7
+2 - - 8
+3 - - 9
+4 - - 10
+5 - - 11
+6 - - 12
+16 - - 13
+17 - - 14
+18 - - 15
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 17:01:30 UTC 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>

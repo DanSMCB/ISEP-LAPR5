@@ -1,0 +1,55 @@
+<app-home></app-home>
+<div class="menu-container">
+    <h2>Criação de um utilizador</h2>
+    <form #utilizadorForm="ngForm" (ngSubmit)="createUtilizador(utilizadorPrNome.value, utilizadorUlNome.value, utilizadorEmail.value, utilizadorPassword.value, selectedCargo, utilizadorNrTel.value, utilizadorForm)">
+
+        <div class="form-input">
+            <label for="new-utilizador">Primeiro nome: </label>
+            <input id="new-utilizador" type="text" #utilizadorPrNome="ngModel" ngModel name="utilizadorPrNome" />
+            <div *ngIf="utilizadorPrNome.errors?.['required']">Primeiro nome é obrigatório</div>
+        </div>
+
+        <div class="form-input">
+            <label for="new-utilizador">Último nome: </label>
+            <input id="new-utilizador" type="text" #utilizadorUlNome="ngModel" ngModel name="utilizadorUlNome" />
+            <div *ngIf="utilizadorUlNome.errors?.['required']">Último nome é obrigatório</div>
+        </div>
+
+        <div class="form-input">
+            <label for="new-utilizador">Email: </label>
+            <input id="new-utilizador" type="text" #utilizadorEmail="ngModel" ngModel name="utilizadorEmail" />
+            <div *ngIf="utilizadorEmail.errors?.['required']">Email é obrigatório</div>
+        </div>
+
+        <div class="form-input">
+            <label for="new-utilizador">Password: </label>
+            <input id="new-utilizador-pass" type="password" #utilizadorPassword="ngModel" ngModel name="utilizadorPassword" />
+            <div *ngIf="utilizadorPassword.errors?.['required']">Password é obrigatória</div>
+            <div>
+                <input type="checkbox" id="showPassword" (change)="togglePasswordVisibility($event)">
+                <label for="showPassword">Mostrar senha</label>
+            </div>
+        </div>
+
+        <div class="form-input">
+            <label for="new-utilizador">Número de telefone: </label>
+            <input id="new-utilizador" type="text" #utilizadorNrTel="ngModel" ngModel name="utilizadorNrTel" />
+            <div *ngIf="utilizadorNrTel.errors?.['required']">Número de telefone é obrigatório</div>
+        </div>
+
+        <div class="form-input">
+            <label for="new-utilizador">Cargo: </label>
+            <select id="new-utilizador" [(ngModel)]="selectedCargo" name="utilizadorCargo">
+                <option value="gestor-campus">Gestor de Campus</option>
+                <option value="gestor-frota">Gestor de Frota</option>
+                <option value="gestor-tarefas">Gestor de Tarefas</option>
+                <option value="administrador-sistema">Administrador de Sistema</option>
+            </select>
+        </div>
+    
+        <div class="form-buttons">
+            <button type="submit" class="registar-button" id="registar-button">Criar</button>
+            <button class="registar-button" (click)="goBack()">Voltar</button>
+        </div>
+    </form>
+</div>

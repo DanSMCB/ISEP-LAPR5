@@ -1,0 +1,34 @@
+<app-home></app-home>
+
+<div class="menu-container">
+    <h2>Atualizar Passagem</h2>
+    <form #passagemForm="ngForm" (ngSubmit)="updatePassagem(passagemId.value, passagemConnectionEdificioInicial.value, passagemConnectionEdificioFinal.value)">
+        
+        <div class="form-group">
+            <label for="new-passagem-id">Id: </label>
+            <input id="new-passagem-id" type="text" #passagemId="ngModel" ngModel name="passagemId" /> 
+            <div *ngIf="passagemId.errors?.['required']">
+                Id é obrigatório
+            </div>
+            <br>
+            <label for="new-passagem-connection-edificio">Connection Edificio-Piso inicial: </label>
+            <input id="new-passagem-connection-edificio" type="text" #passagemConnectionEdificioInicial="ngModel" ngModel name="passagemConnectionEdificioInicial" /> 
+            <div *ngIf="passagemConnectionEdificioInicial.errors?.['required']">
+                Connection Edificio-Piso inicial é obrigatório
+            </div>
+            <br>
+            <label for="new-passagem-connection-piso">Connection Edificio-Piso final: </label>
+            <input id="new-passagem-connection-piso" type="text" #passagemConnectionEdificioFinal="ngModel" ngModel name="passagemConnectionEdificioFinal" /> 
+            <div *ngIf="passagemConnectionEdificioFinal.errors?.['required']">
+                Connection Edificio-Piso final é obrigatório
+            </div>
+            <br>
+            <div class="form-buttons">
+                <button type="submit" class="registar-button" id="registar-button">
+                    Atualizar
+                </button>
+                <button class="registar-button" (click)="goBack()">Voltar</button>
+            </div>
+        </div>
+    </form>
+</div>

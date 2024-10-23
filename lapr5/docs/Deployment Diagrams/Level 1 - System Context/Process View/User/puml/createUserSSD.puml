@@ -1,0 +1,28 @@
+@startuml createUserSSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+actor Administrador as A
+participant RobDroneGo as system <<System(C4)>>
+
+
+A -> system: I want to create a new User
+activate system
+
+system --> A: asks for the details on the new User
+deactivate system
+
+A -> system: inserts the information about the new User
+activate system
+
+system --> A: informs about the success of the operation
+deactivate system
+
+deactivate system
+deactivate A
+
+@enduml

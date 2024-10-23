@@ -1,0 +1,23 @@
+<app-home></app-home>
+<div class="tabela-container">
+    <h2>Lista de Pisos com Passagem para outros Edifícios</h2>
+    <table>
+        <tr>
+            <th>Edificio</th>
+            <th>Piso</th>
+            <th>Descricao</th>
+        </tr>
+        <tr *ngFor="let piso of paginatedPisos">
+            <td>{{ piso.edificio }}</td>
+            <td>{{ piso.piso }}</td>
+            <td>{{ piso.descricao }}</td>
+        </tr>
+    </table>
+    <!-- Paginação -->
+    <div class="pagination-container">
+        <button (click)="prevPage()" [disabled]="startIndex === 0">Anterior</button>
+        <span class="page-number">Página {{ currentPage }}</span>
+        <button (click)="nextPage()" [disabled]="endIndex >= pisos.length">Próxima</button>
+    </div>
+    <button class="registar-button" (click)="goBack()">Voltar</button>
+</div>

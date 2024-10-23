@@ -1,0 +1,77 @@
+<app-home></app-home>
+<div class="tabela-container">
+    <h2>Lista de Requisições de Tarefas</h2>
+    <div class="filter-container">
+        <label for="filtroSelecionado">Filtrar por:</label>
+        <select id="filtroSelecionado" [(ngModel)]="filtroSelecionado">
+          <option value="estado">Estado</option>
+          <option value="tipoDeRobot">Tipo de Robot</option>
+          <option value="contacto">Contacto Requisitante</option>
+        </select>
+      
+        <label *ngIf="filtroSelecionado === 'estado'" for="estadoFilter">Estado:</label>
+        <select *ngIf="filtroSelecionado === 'estado'" id="estadoFilter" [(ngModel)]="estadoFilter">
+            <option value=" "> </option>
+            <option value="aprovada">Aprovada</option>
+            <option value="nao aprovada">Não Aprovada</option>
+        </select>
+
+        <label *ngIf="filtroSelecionado === 'tipoDeRobot'" for="tipoDeRobotFilter">Tipo de Robot:</label>
+        <select *ngIf="filtroSelecionado === 'tipoDeRobot'" id="tipoDeRobotFilter" [(ngModel)]="tipoDeRobotFilter">
+          <option value="">Todos</option>
+          <option value="robisep">Robisep</option>
+          <option value="droneisep">Droneisep</option>
+        </select>
+      
+        <label *ngIf="filtroSelecionado === 'contacto'" for="contactoRequisitanteFilter">Contacto Requisitante:</label>
+        <input *ngIf="filtroSelecionado === 'contacto'" type="text" id="contactoRequisitanteFilter" [(ngModel)]="contactoRequisitanteFilter">
+      
+        <button (click)="applyFilters()">Aplicar Filtros</button>
+        <button (click)="clearFilters()">Limpar Filtros</button>
+    </div>
+    <table>
+        <tr>
+            <th>Código</th>
+            <th>Descrição</th>
+            <th>Robot</th>
+            <th>Tipo de Robot</th>
+            <th>Estado</th>
+            <th>Contacto do Requisitante</th>
+            <th>Tipo de Tarefa</th>
+
+            <th>Contacto de Incidente</th>
+            <th>Edifício</th>
+            <th>Pisos</th>
+
+            <th>Sala de Recolha</th>
+            <th>Sala de Entrega</th>
+            <th>Contacto de Recolha</th>
+            <th>Contacto de Entrega</th>
+        </tr>
+        <tr *ngFor="let tarefa of paginatedTarefas">
+            <td>{{ tarefa.codigo }}</td>
+            <td>{{ tarefa.descricao }}</td>
+            <td>{{ tarefa.robot }}</td>
+            <td>{{ tarefa.tipoDeRobot }}</td>
+            <td>{{ tarefa.estado }}</td>
+            <td>{{ tarefa.contactoRequisitante }}</td>
+            <td>{{ tarefa.tipoDeTarefa }}</td>
+        
+            <td>{{ tarefa.contactoIncidente }}</td>
+            <td>{{ tarefa.edificio }}</td>
+            <td>{{ parsePisos(tarefa.pisos) }}</td>
+        
+            <td>{{ tarefa.salaRecolha }}</td>
+            <td>{{ tarefa.salaEntrega }}</td>
+            <td>{{ tarefa.contactoRecolha }}</td>
+            <td>{{ tarefa.contactoEntrega }}</td>
+        </tr>
+    </table>
+    <!-- Paginação -->
+    <div class="pagination-container">
+        <button (click)="prevPage()" [disabled]="startIndex === 0">Anterior</button>
+        <span class="page-number">Página {{ currentPage }}</span>
+        <button (click)="nextPage()" [disabled]="endIndex >= tarefas.length">Próxima</button>
+    </div>
+    <button class="registar-button" (click)="goBack()">Voltar</button>
+</div>

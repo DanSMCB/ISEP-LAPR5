@@ -1,0 +1,55 @@
+<app-home></app-home>
+<div class="tabela-container">
+    <h2>Lista de Requisições de Tarefas ainda não aprovadas</h2>
+    <table>
+        <tr>
+            <th>Código</th>
+            <th>Descrição</th>
+            <th>Robot</th>
+            <th>Tipo de Robot</th>
+            <th>Estado</th>
+            <th>Contacto do Requisitante</th>
+            <th>Tipo de Tarefa</th>
+
+            <th>Contacto de Incidente</th>
+            <th>Edifício</th>
+            <th>Pisos</th>
+
+            <th>Sala de Recolha</th>
+            <th>Sala de Entrega</th>
+            <th>Contacto de Recolha</th>
+            <th>Contacto de Entrega</th>
+            <th>Aprovação da Requisição</th>
+        </tr>
+        <tr *ngFor="let tarefa of paginatedTarefas">
+            <td>{{ tarefa.codigo }}</td>
+            <td>{{ tarefa.descricao }}</td>
+            <td>{{ tarefa.robot }}</td>
+            <td>{{ tarefa.tipoDeRobot }}</td>
+            <td>{{ tarefa.estado }}</td>
+            <td>{{ tarefa.contactoRequisitante }}</td>
+            <td>{{ tarefa.tipoDeTarefa }}</td>
+        
+            <td>{{ tarefa.contactoIncidente }}</td>
+            <td>{{ tarefa.edificio }}</td>
+            <td>{{ parsePisos(tarefa.pisos) }}</td>
+        
+            <td>{{ tarefa.salaRecolha }}</td>
+            <td>{{ tarefa.salaEntrega }}</td>
+            <td>{{ tarefa.contactoRecolha }}</td>
+            <td>{{ tarefa.contactoEntrega }}</td>
+        
+            <td>
+                <button class="registar-button" (click)="updateEstadoDaTarefa(tarefa.codigo, 'aprovada')" [disabled]="tarefa.estado === 'aprovada'">Aprovar</button>
+                <button class="registar-button" (click)="updateEstadoDaTarefa(tarefa.codigo, 'nao aprovada')" [disabled]="tarefa.estado === 'nao aprovada'">Recusar</button>
+            </td>
+        </tr>
+    </table>
+    <!-- Paginação -->
+    <div class="pagination-container">
+        <button (click)="prevPage()" [disabled]="startIndex === 0">Anterior</button>
+        <span class="page-number">Página {{ currentPage }}</span>
+        <button (click)="nextPage()" [disabled]="endIndex >= tarefas.length">Próxima</button>
+    </div>
+    <button class="registar-button" (click)="goBack()">Voltar</button>
+</div>

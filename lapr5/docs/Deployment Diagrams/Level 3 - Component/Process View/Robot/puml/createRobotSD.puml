@@ -1,0 +1,113 @@
+@startuml createRobotSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+!pragma teoz true
+box "<<Container(C4)>>\n Fleet Management" #LightGreen
+
+    box "<<Component(C4)>>\nInterface Adapter Layer" #Cyan
+        participant IRobotController as  ICTL <<Component(C4)>>
+        participant RobotController as  CTL <<Component(C4)>>
+        participant RobotRepository as  DR <<Component(C4)>>
+    end box
+      box "<<Component(C4)>>\nApplication Services Layer" #Red
+        participant RobotService as  SV <<Component(C4)>>
+        participant IRobotService as  ISV <<Component(C4)>>
+        participant IRobotRepo as  IER <<Component(C4)>>
+      end box
+      box "<<Component(C4)>>\nEntities\Core\Domanin Layer" #Yellow
+        participant "Robot : Robot" as  Robot <<Component(C4)>>
+      end box
+participant "RobotDTO : RobotDTO" as  DTO <<Component(C4)>>
+
+end box
+
+
+ -> CTL: POST Post(RobotDto)
+alt If the Robot doesn't exist in the system
+activate CTL
+CTL -> SV : CreateRobot(RobotDto)
+activate SV
+
+SV -> Robot : Create(RobotDto)
+activate Robot
+Robot --> SV : Robot
+deactivate Robot
+
+SV -> DR : save(Robot)
+activate DR
+DR --> SV : true
+deactivate DR
+
+SV -> DTO : toRobotDTO(Robot)
+activate DTO
+DTO --> SV : RobotDto
+deactivate DTO
+SV --> CTL : RobotDto
+deactivate SV
+ <-- CTL : RobotDto
+
+ <-- CTL: 200 OK
+deactivate CTL
+
+
+
+
+
+else If a Robot already exists with the id entered
+
+
+
+
+CTL -> SV : CreateRobot(RobotDto)
+activate CTL
+activate SV
+
+SV -> Robot : Create(RobotDto)
+activate Robot
+Robot --> SV : Robot
+deactivate Robot
+
+SV -> DR : save(Robot)
+activate DR
+DR --> SV : false
+deactivate DR
+SV --> CTL : BadRequestException
+deactivate SV
+ <-- CTL : BadRequestException
+
+
+ <-- CTL: 400 BAD REQUEST
+deactivate CTL
+
+
+
+
+else If the attributes do not respect the business rules
+
+
+CTL -> SV : CreateRobot(RobotDto)
+activate CTL
+activate SV
+
+SV -> Robot : Create(RobotDto)
+activate Robot
+Robot --> SV : BusinessRuleValidationException
+deactivate Robot
+
+SV --> CTL : BusinessRuleValidationException
+deactivate SV
+ <-- CTL : BusinessRuleValidationException
+
+ <-- CTL: 400 BAD REQUEST
+deactivate CTL
+
+
+end
+
+@enduml

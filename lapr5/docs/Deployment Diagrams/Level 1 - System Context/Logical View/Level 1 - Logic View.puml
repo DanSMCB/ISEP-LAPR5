@@ -1,0 +1,31 @@
+
+@startuml
+component "<<component>>\n<<Context(C4)>>\nRobDroneGo" as c2 {
+  port 1
+  port 2
+  port 3
+  port 4
+  port 5
+  port 6
+
+}
+
+interface UITarefa as UT
+interface APITarefa as AT
+interface UIGestorFrota as UGF
+interface APIGestorFrota as AGF
+interface UIGestorCampus as UGC
+interface APIGestorCampus as AGC
+
+
+
+
+UT --- 1
+AT --- 2
+UGF --- 3
+AGF --- 4
+UGC --- 5
+AGC --- 6
+
+
+@enduml

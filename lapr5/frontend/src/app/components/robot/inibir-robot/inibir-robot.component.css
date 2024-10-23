@@ -1,0 +1,156 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 210px;
+}
+
+.menu-container, .tabela-container {
+    box-sizing: border-box;
+}
+
+h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    color: #7c1414;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.registar-button {
+    font-family: 'Arial', sans-serif;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 15px;
+    margin-bottom: 0px;
+    color: #ffffff;
+    background-color: #7c1414;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+label {
+    color: #7c1414;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+input {
+    font-size: 1rem;
+    padding: 1rem;
+    width: auto;
+    border-radius: 5px;
+    border: 1px solid #7c1414;
+    margin-bottom: 20px;
+}
+
+form {
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+.menu-container {
+    position: relative; /* Removi o posicionamento absoluto para melhorar o fluxo no layout */
+    background-color: white;
+    border-radius: 15px;
+    border: 5px solid #7c1414;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: 600px;
+    height: 265px;
+}
+
+.select {
+    font-size: 1rem;
+    padding: 1rem;
+    width: auto;
+    border: 2px solid #7c1414;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    appearance: none;
+    margin-bottom: 20px;
+}
+
+.tabela-container {
+    background-color: white;
+    border-radius: 15px;
+    border: 5px solid #7c1414;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    padding: 25px 20px;
+    text-align: center;
+    font-size: large;
+    width: 800px;
+    height: auto;
+}
+
+.tabela-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabela-container th, .tabela-container td {
+    border: 1px solid #7c1414;
+    padding: 12px;
+    text-align: left;
+}
+
+.tabela-container th {
+    background-color: #7c1414;
+    color: #fff;
+}
+
+.registar-button:hover {
+    background-color: #530a0a;
+}
+
+.tabela-container button[disabled]:hover,
+.tabela-container button[disabled]:focus,
+.tabela-container button[disabled]:active {
+    background-color: #ccc !important;
+    color: inherit !important;
+    cursor: not-allowed !important;
+}
+
+.tabela-container button.disabled {
+    background-color: #ccc;
+    color: inherit;
+    cursor: not-allowed;
+}
+
+.tabela-container button.disabled:hover {
+    background-color: #ccc;
+    color: inherit;
+    cursor: not-allowed;
+}
+
+.tabela-container div {
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tabela-container div button {
+    font-weight: bold;
+    padding: 10px;
+    font-size: 0.9rem;
+    background-color: #7c1414;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+.tabela-container div button:hover {
+    background-color: #530a0a;
+}

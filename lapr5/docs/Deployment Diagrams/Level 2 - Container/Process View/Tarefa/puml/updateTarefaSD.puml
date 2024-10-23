@@ -1,0 +1,38 @@
+@startuml updateTarefaSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+box "<<RobDroneGo(C4)>>\n\tSystem"
+participant TaskManagement as CM <<Container(C4)>>
+end box
+
+
+
+ -> CM: PATCH updateTarefa(TarefaDTO)
+activate CM
+
+alt If the Tarefa ID matches and the information\n respects business rules
+ <-- CM : 200 OK(updatedObj)
+
+
+
+else If the inserted info does not respect business rules
+
+ <-- CM : 400 Bad Request
+
+ 
+else If the ID does not match any Tarefa
+
+ <-- CM : 400 Bad Request
+deactivate CM
+
+
+end
+
+
+@enduml

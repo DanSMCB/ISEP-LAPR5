@@ -1,0 +1,29 @@
+@startuml createTarefaSSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+actor Utente_do_Sistema as US
+participant RobDroneGo as system <<System(C4)>>
+
+
+US -> system: I want to create a new Tarefa
+activate system
+
+system --> US: asks for the details on the new Tarefa
+deactivate system
+
+US -> system: inserts the information about the new Tarefa
+activate system
+
+system --> US: informs about the success of the operation
+deactivate system
+
+
+deactivate system
+deactivate US
+
+@enduml

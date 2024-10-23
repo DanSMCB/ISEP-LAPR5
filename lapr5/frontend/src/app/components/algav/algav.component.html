@@ -1,0 +1,23 @@
+<app-home></app-home>
+<div class="container-wrapper">
+    <div class="menu-container">
+        <div class="input-container">
+            <h2>Caminho entre edifícios</h2>
+            <form #elevadorForm="ngForm" (ngSubmit)="getCaminhoEd(edificioId_1.value,edificioId_2.value)">
+                <div class="form-group">
+                    <label for="edificioId1">Origem: </label>
+                    <input id="edificioId1" type="text" #edificioId_1="ngModel" ngModel name="edificioId_1" />
+                    <br>
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label for="edificioId2">Destino: </label>
+                    <input id="edificioId2" type="text" #edificioId_2="ngModel" ngModel name="edificioId_2" />
+                    <br>
+                    <br>
+                    <button type="submit" class="registar-button" id="registar-button">Submeter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

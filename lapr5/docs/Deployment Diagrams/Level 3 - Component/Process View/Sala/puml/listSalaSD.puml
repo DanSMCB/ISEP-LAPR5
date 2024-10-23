@@ -1,0 +1,90 @@
+@startuml listSalaSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+
+!pragma teoz true
+box "<<System(C4)>>\n RobDroneGo" #LightSkyBlue
+    box "<<Container(C4)>>\n Campus Management" #LightGreen
+
+        box "<<Component(C4)>>\nInterface Adapter Layer" #Cyan
+            participant ISalaController as  ICTL <<Component(C4)>>
+            participant SalaController as  CTL <<Component(C4)>>
+            participant SalaRepository as  DR <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nApplication Services Layer" #Red
+            participant SalaService as  SV <<Component(C4)>>
+            participant ISalaService as  ISV <<Component(C4)>>
+            participant ISalaRepo as  IER <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nEntities\Core\Domanin Layer" #Yellow
+            participant "Sala : Sala" as  Sala <<Component(C4)>>
+        end box
+    participant "SalaDTO : SalaDTO" as  DTO <<Component(C4)>>
+
+    end box
+end box   
+
+
+
+ -> CTL: GET getAllSala()
+activate CTL
+alt If there are Sala on the system
+
+
+    CTL -> SV : getAllSala()
+    activate SV
+
+    SV -> DR : getAll()
+    activate DR
+
+    DR --> SV : SalaList
+    deactivate DR
+
+
+    SV -> DTO : toDTO(SalaList)
+    activate DTO 
+    DTO -> DTO: toDTO(SalaList)
+    DTO --> SV : List
+    deactivate DTO
+    deactivate DR
+    SV --> CTL: List
+    deactivate SV
+
+     <-- CTL: 200 OK + List
+    deactivate CTL
+
+else If there are no Sala on the system
+    
+    
+    CTL -> SV : getAllSala() 
+    activate SV
+    activate CTL
+    
+  
+
+    
+    SV -> DR : getAll()
+    activate DR
+
+    DR -> SV : null
+    deactivate DR
+
+    SV --> CTL : null
+    deactivate SV
+     <-- CTL: 200 OK + null (empty List)
+    deactivate CTL
+
+    
+   
+
+
+
+end
+
+@enduml

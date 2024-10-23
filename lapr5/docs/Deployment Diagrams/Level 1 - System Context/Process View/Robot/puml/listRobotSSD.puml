@@ -1,0 +1,22 @@
+@startuml listRobotSSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+actor "Gestor de Frota" as GF
+participant RobDroneGo as system <<System(C4)>>
+
+
+GF -> system: I want to consult the details of all Robots in the system
+activate system
+
+system --> GF: displays a list of Robots and its details
+deactivate system
+
+deactivate system
+deactivate GF
+
+@enduml

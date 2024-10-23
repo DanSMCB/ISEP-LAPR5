@@ -1,0 +1,22 @@
+@startuml listPassagemSSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+actor "Gestor de Campus" as GC
+participant RobDroneGo as system <<System(C4)>>
+
+
+GC -> system: I want to consult the details of all Passagens in the system
+activate system
+
+system --> GC: displays a list of Passagens and its details
+deactivate system
+
+deactivate system
+deactivate GC
+
+@enduml

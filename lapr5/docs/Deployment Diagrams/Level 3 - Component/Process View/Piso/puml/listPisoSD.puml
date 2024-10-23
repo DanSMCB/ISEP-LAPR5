@@ -1,0 +1,90 @@
+@startuml listPisoSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+
+!pragma teoz true
+box "<<System(C4)>>\n RobDroneGo" #LightSkyBlue
+    box "<<Container(C4)>>\n Campus Management" #LightGreen
+
+        box "<<Component(C4)>>\nInterface Adapter Layer" #Cyan
+            participant IPisoController as  ICTL <<Component(C4)>>
+            participant PisoController as  CTL <<Component(C4)>>
+            participant PisoRepository as  DR <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nApplication Services Layer" #Red
+            participant PisoService as  SV <<Component(C4)>>
+            participant IPisoService as  ISV <<Component(C4)>>
+            participant IPisoRepo as  IER <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nEntities\Core\Domanin Layer" #Yellow
+            participant "Piso : Piso" as  Piso <<Component(C4)>>
+        end box
+    participant "PisoDTO : PisoDTO" as  DTO <<Component(C4)>>
+
+    end box
+end box   
+
+
+
+ -> CTL: GET getAllPiso()
+activate CTL
+alt If there are Piso on the system
+
+
+    CTL -> SV : getAllPiso()
+    activate SV
+
+    SV -> DR : getAll()
+    activate DR
+
+    DR --> SV : PisoList
+    deactivate DR
+
+
+    SV -> DTO : toDTO(PisoList)
+    activate DTO 
+    DTO -> DTO: toDTO(PisoList)
+    DTO --> SV : List
+    deactivate DTO
+    deactivate DR
+    SV --> CTL: List
+    deactivate SV
+
+     <-- CTL: 200 OK + List
+    deactivate CTL
+
+else If there are no Piso on the system
+    
+    
+    CTL -> SV : getAllPiso() 
+    activate SV
+    activate CTL
+    
+  
+
+    
+    SV -> DR : getAll()
+    activate DR
+
+    DR -> SV : null
+    deactivate DR
+
+    SV --> CTL : null
+    deactivate SV
+     <-- CTL: 200 OK + null (empty List)
+    deactivate CTL
+
+    
+   
+
+
+
+end
+
+@enduml

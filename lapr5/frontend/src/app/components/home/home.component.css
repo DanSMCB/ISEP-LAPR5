@@ -1,0 +1,121 @@
+body {
+    padding: 0;
+    margin: -8px -16px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.background-image {
+    position: relative;
+}
+
+.background-img {
+    margin: 83px 0px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.menu-bar {
+    background: rgb(97, 21, 8);
+    text-align: left;
+    z-index: 1;
+    overflow-x: auto;
+    color: #fff;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.menu-bar ul {
+    display: inline-flex;
+    list-style: none;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.menu-bar img{
+    width: 160px;
+    float: left;
+    margin-right: 15px;
+}
+
+.menu-bar ul li {
+    width: fit-content;
+    margin: 15px;
+    padding: 15px;
+}
+
+.menu-bar ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.active,
+.menu-bar ul li:hover {
+    background: #530a0a;
+    border-radius: 3px;
+}
+
+.menu-bar .fa-solid {
+    margin-right: 8px;
+}
+
+.sub-menu-1 {
+    display: none;
+}
+
+.menu-bar ul li:hover .sub-menu-1 {
+    display: block;
+    position: absolute;
+    background: rgb(97, 21, 8);
+    margin-top: 15px;
+    margin-left: -15px;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul {
+    display: block;
+    margin: 10px;
+    white-space: nowrap;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li {
+    width: 235px;
+    padding: 8px;
+    margin-left: -35px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li:last-child {
+    border-bottom: none;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li a:hover {
+    color: #b96e6e;
+}
+
+.fa-angle-right {
+    float: right;
+}
+
+.sub-menu-2 {
+    display: none;
+}
+
+.hover-me:hover .sub-menu-2 {
+    position: absolute;
+    display: block;
+    margin-top: -40px;
+    margin-left: 235px;
+    background: rgb(97, 21, 8);
+    z-index: 1;
+}

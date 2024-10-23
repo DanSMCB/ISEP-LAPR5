@@ -1,0 +1,36 @@
+@startuml createPisoSD
+autonumber
+
+skinparam sequence {
+    ParticipantBorderColor black
+    ParticipantBackgroundColor white
+}
+
+
+
+box "<<RobDroneGo(C4)>>\n\tSystem"
+participant CampusManagement as  CM <<Container(C4)>>
+end box
+
+
+ -> CM: POST createPiso(pisoDTO)
+activate CM
+
+alt If the Piso doesn't exist 
+ <-- CM: 200 OK(createdObj)
+
+else If a Piso already exists with the typed id
+ <-- CM: 400 Bad Request
+
+else If the attributes do not respect the business rules
+
+
+<-- CM: 400 Bad Request
+deactivate CM
+
+
+
+end
+
+
+@enduml

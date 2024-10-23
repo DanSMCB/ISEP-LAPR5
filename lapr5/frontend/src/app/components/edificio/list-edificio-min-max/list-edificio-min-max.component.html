@@ -1,0 +1,54 @@
+<app-home></app-home>
+
+<div class="container">
+    <div class="menu-container">
+        <div class="section-container input-section">
+            <h2>Min e Max de Pisos dos Edifícios</h2>
+            <form #elevadorForm="ngForm" (ngSubmit)="getEdificiosMinMax(edificioMin.value, edificioMax.value)">
+                <div class="form-group">
+                    <label for="new-edificio">Min: </label>
+                    <input edificioMin="new-edificio" type="number" #edificioMin="ngModel" ngModel name="edificioMin" />
+                    <div *ngIf="edificioMin.errors?.['required']">
+                        Min é obrigatório
+                    </div>
+                    <br>
+                    <label for="new-edificio">Max: </label>
+                    <input edificioMax="new-edificio" type="number" #edificioMax="ngModel" ngModel name="edificioMax" />
+                    <div *ngIf="edificioMax.errors?.['required']">
+                        Max é obrigatório
+                    </div>
+                    <br>
+                    <button type="submit" class="registar-button" id="registar-button">
+                        Submeter
+                    </button>
+                    <button class="registar-button" (click)="goBack()">Voltar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="tabela-container">
+        <h2>Lista de Edifícios</h2>
+        <table>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Piso Max Size</th>
+            </tr>
+            <tr *ngFor="let edificio of paginatedEdificios">
+                <td>{{ edificio.codigo }}</td>
+                <td>{{ edificio.nome }}</td>
+                <td>{{ edificio.descricao }}</td>
+                <td>{{ edificio.pisoMaxSize }}</td>
+            </tr>
+        </table>
+
+        <!-- Paginação -->
+        <div class="pagination-container">
+            <button (click)="prevPage()" [disabled]="startIndex === 0">Anterior</button>
+            <span class="page-number">Página {{ currentPage }}</span>
+            <button (click)="nextPage()" [disabled]="endIndex >= edificios.length">Próxima</button>
+        </div>
+    </div>
+</div>

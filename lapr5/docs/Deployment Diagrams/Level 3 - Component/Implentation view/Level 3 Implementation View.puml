@@ -1,0 +1,64 @@
+@startuml Level 3 Implementation View 
+top to bottom direction
+component "<<component>>\n<<C4 Container>>\nUI" as c1 {
+    port 1
+    port 2
+    port 3
+    port 4
+    folder "Angular component" {
+        component "<<component>>\nHTML+CCS+JS" as c2 {
+            port 5
+            port 6
+        }
+        component "<<component>>\nComponent" as c3 {
+        }
+        interface ComponentAPI as CAPI
+    }
+    component "<<component>>\nModel" as c4 {
+    }
+    component "<<component>>\nService" as c5 {
+    }
+    component "<<component>>\nHTTP Driver" as c6 {
+        port 7
+        port 8
+    }
+    interface ModelAPI as MAPI
+    interface ObserverAPI as OAPI
+    interface HTTPDriverAPI as HDAPI
+    interface ServiceAPI as SAPI
+}
+
+interface UICampus as UIC
+interface UIFleet as UIF
+interface APIFleet as APIF
+interface APICampus as APIC
+
+UIC -- 1
+UIF -- 2
+APIF )-- 3
+APIC )-- 4
+
+1 -- 5
+2 -- 6
+3 - 7
+4 - 8
+
+c2 --( CAPI
+CAPI -- c3
+
+c2 -- OAPI
+OAPI )-- c4
+
+c2 --( MAPI
+c4 -left-( MAPI
+c3 --( MAPI
+MAPI -- c5
+
+MAPI -up-- c6
+
+c3 --( SAPI
+SAPI -- c5
+
+c5 -( HDAPI
+HDAPI -up-- c6
+@enduml

@@ -1,0 +1,48 @@
+<app-home></app-home>
+
+<div class="container">
+    <div class="menu-container">
+        <div class="section-container input-section">
+            <h2>Inibir um Robot</h2>
+            <form #elevadorForm="ngForm" (ngSubmit)="inhibitRobot(robotNumeroSerie.value)">
+                <div class="form-group">
+                    <label for="new-robot">Número de Série: </label>
+                    <input robotNumeroSerie="new-robot" type="text" #robotNumeroSerie="ngModel" ngModel name="robotNumeroSerie" />
+                    <div *ngIf="robotNumeroSerie.errors?.['required']">Número de Série é obrigatório</div>
+                    <br>
+                    <button type="submit" class="registar-button" id="registar-button">Submeter</button>
+                    <button class="registar-button" (click)="goBack()">Voltar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="tabela-container">
+        <h2>Lista de Robots</h2>
+        <table>
+            <tr>
+                <th>Número de Série</th>
+                <th>Código</th>
+                <th>Nickname</th>
+                <th>Marca</th>
+                <th>Estado</th>
+                <th>Tipo de Robot</th>
+            </tr>
+            <tr *ngFor="let robot of paginatedRobots">
+                <td>{{ robot.numeroSerie }}</td>
+                <td>{{ robot.codigo }}</td>
+                <td>{{ robot.nickname }}</td>
+                <td>{{ robot.marca }}</td>
+                <td>{{ robot.estado }}</td>
+                <td>{{ robot.tipoDeRobot }}</td>
+            </tr>
+        </table>
+
+        <!-- Paginação -->
+        <div class="pagination-container">
+            <button (click)="prevPage()" [disabled]="startIndex === 0">Anterior</button>
+            <span class="page-number">Página {{ currentPage }}</span>
+            <button (click)="nextPage()" [disabled]="endIndex >= robots.length">Próxima</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    color: #7c1414;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.registar-button {
+    font-family: 'Arial', sans-serif;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 15px;
+    margin-bottom: 0px;
+    color: #ffffff;
+    background-color: #7c1414;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+label {
+    color: #7c1414;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+input {
+    font-size: 1rem;
+    padding: 1rem;
+    width: auto;
+    border-radius: 5px;
+    border: 1px solid #7c1414;
+    margin-bottom: 20px;
+}
+
+form {
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+.menu-container {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 15px;
+    border: 5px solid #7c1414;
+    box-shadow: 0 0 8px rgba(124, 20, 20, 0.3);
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 470px;
+    height: auto;
+    transform: translateX(-50%);
+}
+
+select {
+    font-size: 1rem;
+    padding: 1rem;
+    width: auto;
+    border: 2px solid #7c1414;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    appearance: none;
+    margin-bottom: 20px;
+}
+
+select:focus {
+    outline: none;
+    border: 2px solid #541010;
+    box-shadow: 0 0 8px rgba(124, 20, 20, 0.3);
+}
+
+select option {
+    background-color: #ffffff;
+    color: #000000;
+}

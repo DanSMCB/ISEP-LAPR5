@@ -1,0 +1,31 @@
+@startuml listTarefaSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+box "<<RobDroneGo(C4)>>\n\tSystem"
+
+participant TaskManagement as CM <<Container(C4)>>
+end box
+
+-> CM: GET GetAll()
+activate CM
+
+alt If there are available Tarefa
+ <-- CM : 200 OK
+
+
+else If there are no Tarefa in the system
+
+ <-- CM : 404 NOT FOUND
+deactivate CM
+
+
+end
+
+
+@enduml

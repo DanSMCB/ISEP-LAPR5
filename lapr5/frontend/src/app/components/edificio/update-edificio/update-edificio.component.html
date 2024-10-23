@@ -1,0 +1,30 @@
+<app-home></app-home>
+<div class="menu-container">
+    <h2>Atualizar Edifício</h2>
+    <form #edificioForm="ngForm" (ngSubmit)="updateEdificio(edificioCodigo.value, edificioNome.value, edificioDescricao.value, edificioPisoMaxSize.value)">
+        <div class="form-input">
+            <label for="new-edificio">Código: </label>
+            <input id="new-edificio" type="text" #edificioCodigo="ngModel" ngModel name="edificioCodigo" />
+            <div *ngIf="edificioCodigo.errors?.['required']">Codigo é obrigatório</div>
+        </div>
+        <div class="form-input">
+            <label for="new-edificio">Edifício: </label>
+            <input id="new-edificio" type="text" #edificioNome="ngModel" ngModel name="edificioNome" />
+            <div *ngIf="edificioNome.errors?.['required']">Edificio é obrigatório</div>
+        </div>
+        <div class="form-input">
+            <label for="new-edificio">Descrição: </label>
+            <input id="new-edificio" type="text" #edificioDescricao="ngModel" ngModel name="edificioDescricao" />
+            <div *ngIf="edificioDescricao.errors?.['required']">Descrição é obrigatório</div>
+        </div>
+        <div class="form-input">
+            <label for="new-edificio">PisoMaxSize: </label>
+            <input id="new-edificio" type="text" #edificioPisoMaxSize="ngModel" ngModel name="edificioPisoMaxSize" />
+            <div *ngIf="edificioPisoMaxSize.errors?.['required']">PisoMaxSize é obrigatório</div>
+        </div>
+        <div class="form-buttons">
+            <button type="submit" class="registar-button" id="registar-button">Atualizar</button>
+            <button class="registar-button" (click)="goBack()">Voltar</button>
+        </div>
+    </form>
+</div>

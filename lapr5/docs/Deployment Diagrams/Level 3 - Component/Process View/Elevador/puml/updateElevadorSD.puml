@@ -1,0 +1,121 @@
+@startuml updateElevadorSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+!pragma teoz true
+box "<<System(C4)>>\n RobDroneGo" #LightSkyBlue
+    box "<<Container(C4)>>\n Campus Management" #LightGreen
+
+        box "<<Component(C4)>>\nInterface Adapter Layer" #Cyan
+            participant IElevadorController as  ICTL <<Component(C4)>>
+            participant ElevadorController as  CTL <<Component(C4)>>
+            participant ElevadorRepository as  DR <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nApplication Services Layer" #Red
+            participant ElevadorService as  SV <<Component(C4)>>
+            participant IElevadorService as  ISV <<Component(C4)>>
+            participant IElevadorRepo as  IER <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nEntities\Core\Domanin Layer" #Yellow
+            participant "Elevador : Elevador" as  Elevador <<Component(C4)>>
+        end box
+    participant "ElevadorDTO : ElevadorDTO" as  DTO <<Component(C4)>>
+
+    end box
+end box
+
+
+ -> CTL: PUT Put(ElevadorDto)
+ activate CTL
+alt If the Elevador exists in the system
+
+
+    CTL -> SV : UpdatingElevador(ElevadorDto)
+    activate SV
+    
+
+    SV -> DR: GetByID(ElevadorId)
+    activate DR
+    DR --> SV: Elevador
+    deactivate DR
+
+    SV -> Elevador : Update(ElevadorDTO)
+    activate Elevador
+    Elevador --> SV : Elevador
+    deactivate Elevador
+
+    SV -> DR : save(Elevador)
+    activate DR
+    DR --> SV : true
+     deactivate DR
+    SV -> DTO : toElevadorDTO(Elevador)
+    activate DTO
+    DTO -> DTO: toDTO(Elevador)
+    
+    DTO --> SV : ElevadorDTO
+    deactivate DTO
+    SV -> CTL : ElevadorDTO
+    deactivate SV
+     <-- CTL : ElevadorDto + 200 OK
+     deactivate CTL
+
+
+
+
+else If a Elevador already exists with the id entered
+
+
+
+
+CTL -> SV : CreateElevador(ElevadorDto)
+activate CTL
+activate SV
+
+SV -> Elevador : Create(ElevadorDto)
+activate Elevador
+Elevador --> SV : Elevador
+deactivate Elevador
+
+SV -> DR : save(Elevador)
+activate DR
+DR --> SV : false
+deactivate DR
+SV --> CTL : BadRequestException
+deactivate SV
+ <-- CTL : BadRequestException
+
+
+ <-- CTL: 400 BAD REQUEST
+deactivate CTL
+
+
+
+
+else If the attributes do not respect the business rules
+
+
+CTL -> SV : CreateElevador(ElevadorDto)
+activate CTL
+activate SV
+
+SV -> Elevador : Create(ElevadorDto)
+activate Elevador
+Elevador --> SV : BusinessRuleValidationException
+deactivate Elevador
+
+SV --> CTL : BusinessRuleValidationException
+deactivate SV
+ <-- CTL : BusinessRuleValidationException
+
+ <-- CTL: 400 BAD REQUEST
+deactivate CTL
+
+
+end
+
+@enduml

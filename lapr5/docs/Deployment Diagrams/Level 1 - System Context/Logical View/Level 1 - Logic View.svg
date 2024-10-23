@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="309px" preserveAspectRatio="none" style="width:824px;height:309px;background:#FFFFFF;" version="1.1" viewBox="0 0 824 309" width="824px" zoomAndPan="magnify"><defs/><g><!--MD5=[a79645e74fdddf168a098e501fbfe8e0]
+cluster c2--><g id="cluster_c2"><rect fill="none" height="133" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="271" x="214" y="170"/><rect fill="none" height="10" style="stroke:#181818;stroke-width:1.0;" width="15" x="465" y="175"/><rect fill="none" height="2" style="stroke:#181818;stroke-width:1.0;" width="4" x="463" y="177"/><rect fill="none" height="2" style="stroke:#181818;stroke-width:1.0;" width="4" x="463" y="181"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="137" x="281" y="195.9951">&lt;&lt;component&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="143" x="278" y="212.292">&lt;&lt;Context(C4)&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="100" x="299.5" y="228.5889">RobDroneGo</text></g><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="227.5" y="148.6982">1</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="226" y="164"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="274.5" y="148.6982">2</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="273" y="164"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="321.5" y="148.6982">3</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="320" y="164"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="368.5" y="148.6982">4</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="367" y="164"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="415.5" y="148.6982">5</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="414" y="164"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="462.5" y="148.6982">6</text><rect fill="#F1F1F1" height="12" style="stroke:#181818;stroke-width:1.5;" width="12" x="461" y="164"/><!--MD5=[2351bbbb3f6d0a84cf05e128b2a0f454]
+entity UT--><g id="elem_UT"><ellipse cx="34" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="6" y="43.9951">UITarefa</text></g><!--MD5=[0c9b9a497f1ce102fa74e80bd894519e]
+entity AT--><g id="elem_AT"><ellipse cx="145" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="113" y="43.9951">APITarefa</text></g><!--MD5=[1f6a878ce590bf1467e798d6ee491737]
+entity UGF--><g id="elem_UGF"><ellipse cx="275" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="227.5" y="43.9951">UIGestorFrota</text></g><!--MD5=[f67b8f43f42bcdfd3026313bb1f32d40]
+entity AGF--><g id="elem_AGF"><ellipse cx="424" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="372.5" y="43.9951">APIGestorFrota</text></g><!--MD5=[de786a1a9388ef9c1c4270399413c7a8]
+entity UGC--><g id="elem_UGC"><ellipse cx="584" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="525.5" y="43.9951">UIGestorCampus</text></g><!--MD5=[a12803c443722aa07c3cc5b9e3fb308b]
+entity AGC--><g id="elem_AGC"><ellipse cx="755" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="692.5" y="43.9951">APIGestorCampus</text></g><!--MD5=[15ba3654ad81623a6c08c87ac52db10a]
+link UT to 1--><g id="link_UT_1"><path d="M43.02,22.02 C77.07,48.5 197.25,141.97 225.86,164.22 " fill="none" id="UT-1" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[93e562f1b9ba89e9348ddfcb873de2fa]
+link AT to 2--><g id="link_AT_2"><path d="M152.2,23.28 C176.45,51.14 254.67,141.04 274.43,163.75 " fill="none" id="AT-2" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[5aa45f5b6deb593461f2dc897facc43f]
+link UGF to 3--><g id="link_UGF_3"><path d="M277.74,23.28 C286.97,51.14 316.74,141.04 324.26,163.75 " fill="none" id="UGF-3" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[91b983348ce754c865514a1e4bf78399]
+link AGF to 4--><g id="link_AGF_4"><path d="M421.26,23.28 C412.03,51.14 382.26,141.04 374.74,163.75 " fill="none" id="AGF-4" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[5e5a09b7cb4f00305552c2f27d2207fc]
+link UGC to 5--><g id="link_UGC_5"><path d="M575.18,23.28 C545.51,51.14 449.78,141.04 425.59,163.75 " fill="none" id="UGC-5" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[ce8021d4b8b558be58650f1e6088edb3]
+link AGC to 6--><g id="link_AGC_6"><path d="M745.74,19.95 C701.26,43.73 510.1,145.96 473.18,165.69 " fill="none" id="AGC-6" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[32c8b4f538599adedd5c1a2d53565907]
+@startuml
+component "<<component>>\n<<Context(C4)>>\nRobDroneGo" as c2 {
+  port 1
+  port 2
+  port 3
+  port 4
+  port 5
+  port 6
+
+}
+
+interface UITarefa as UT
+interface APITarefa as AT
+interface UIGestorFrota as UGF
+interface APIGestorFrota as AGF
+interface UIGestorCampus as UGC
+interface APIGestorCampus as AGC
+
+
+
+
+UT - - - 1
+AT - - - 2
+UGF - - - 3
+AGF - - - 4
+UGC - - - 5
+AGC - - - 6
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 17:01:30 UTC 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>

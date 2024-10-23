@@ -1,0 +1,26 @@
+<app-home></app-home>
+<div class="tabela-container">
+    <h2>Lista de Edifícios</h2>
+    <table>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Piso Max Size</th>
+        </tr>
+        <tr *ngFor="let edificio of paginatedEdificios">
+            <td>{{ edificio.codigo }}</td>
+            <td>{{ edificio.nome }}</td>
+            <td>{{ edificio.descricao }}</td>
+            <td>{{ edificio.pisoMaxSize }}</td>
+        </tr>
+    </table>
+    
+    <!-- Paginação -->
+    <div class="pagination-container">
+        <button (click)="prevPage()" [disabled]="startIndex === 0">Anterior</button>
+        <span class="page-number">Página {{ currentPage }}</span>
+        <button (click)="nextPage()" [disabled]="endIndex >= edificios.length">Próxima</button>
+    </div>
+    <button class="registar-button" (click)="goBack()">Voltar</button>
+</div>

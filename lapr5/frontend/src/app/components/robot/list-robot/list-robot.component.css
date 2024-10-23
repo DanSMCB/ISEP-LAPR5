@@ -1,0 +1,107 @@
+h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    color: #7c1414;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.tabela-container {
+    margin: 50px 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 15px;
+    border: 5px solid #7c1414;
+    box-shadow: 0 0 8px rgba(124, 20, 20, 0.3);
+    padding: 25px 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 800px;
+    height: auto;
+    text-align: center;
+    font-size: large;
+
+}
+
+.tabela-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabela-container th, .tabela-container td {
+    border: 1px solid #7c1414;
+    padding: 12px;
+    text-align: left;
+}
+
+.tabela-container th {
+    background-color: #7c1414;
+    color: #fff;
+}
+
+.registar-button {
+    padding: 10px;
+    font-size: 0.9rem;
+    background-color: #7c1414;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.registar-button:hover {
+    background-color: #530a0a;
+}
+
+.tabela-container button[disabled]:hover,
+.tabela-container button[disabled]:focus,
+.tabela-container button[disabled]:active {
+    background-color: #ccc !important;
+    color: inherit !important; /* or any other color you want for disabled hover/focus/active */
+    cursor: not-allowed !important;
+}
+
+.tabela-container button.disabled {
+    background-color: #ccc;
+    color: inherit; /* or any other color you want for disabled state */
+    cursor: not-allowed;
+}
+
+.tabela-container button.disabled:hover {
+    background-color: #ccc; /* or any other color you want for disabled hover */
+    color: inherit;
+    cursor: not-allowed;
+}
+
+
+
+.tabela-container div {
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tabela-container div button {
+    font-weight: bold;
+    padding: 10px;
+    font-size: 0.9rem;
+    background-color: #7c1414;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+.tabela-container div button:hover {
+    background-color: #530a0a;
+}

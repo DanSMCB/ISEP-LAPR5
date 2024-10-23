@@ -1,0 +1,90 @@
+@startuml listUserSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+
+!pragma teoz true
+box "<<System(C4)>>\n RobDroneGo" #LightSkyBlue
+    box "<<Container(C4)>>\n User Management" #LightGreen
+
+        box "<<Component(C4)>>\nInterface Adapter Layer" #Cyan
+            participant IUserController as  ICTL <<Component(C4)>>
+            participant UserController as  CTL <<Component(C4)>>
+            participant UserRepository as  DR <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nApplication Services Layer" #Red
+            participant UserService as  SV <<Component(C4)>>
+            participant IUserService as  ISV <<Component(C4)>>
+            participant IUserRepo as  IER <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nEntities\Core\Domanin Layer" #Yellow
+            participant "User : User" as  user <<Component(C4)>>
+        end box
+    participant "UserDTO : UserDTO" as  DTO <<Component(C4)>>
+
+    end box
+end box   
+
+
+
+ -> CTL: GET getAllUser()
+activate CTL
+alt If there are User on the system
+
+
+    CTL -> SV : getAllUser()
+    activate SV
+
+    SV -> DR : getAll()
+    activate DR
+
+    DR --> SV : UserList
+    deactivate DR
+
+
+    SV -> DTO : toDTO(UserList)
+    activate DTO 
+    DTO -> DTO: toDTO(UserList)
+    DTO --> SV : List
+    deactivate DTO
+    deactivate DR
+    SV --> CTL: List
+    deactivate SV
+
+     <-- CTL: 200 OK + List
+    deactivate CTL
+
+else If there are no User on the system
+    
+    
+    CTL -> SV : getAllUser() 
+    activate SV
+    activate CTL
+    
+  
+
+    
+    SV -> DR : getAll()
+    activate DR
+
+    DR -> SV : null
+    deactivate DR
+
+    SV --> CTL : null
+    deactivate SV
+     <-- CTL: 200 OK + null (empty List)
+    deactivate CTL
+
+    
+   
+
+
+
+end
+
+@enduml

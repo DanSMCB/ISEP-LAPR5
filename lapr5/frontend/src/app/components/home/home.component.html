@@ -1,0 +1,166 @@
+<html>
+    <head>
+        <title>Menu</title>
+        <link rel="stylesheet" href="home.component.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    </head>
+    <body>
+        <div class="background-image">
+            <img src="/assets/background1.jpg" alt="Imagem de Fundo" class="background-img">
+            <div class="menu-bar">
+                <ul>
+                    <li><a [routerLink]="['/home']"><img src="/assets/logo.png" alt="logo"></a></li>
+                    <li *ngIf="userData?.role === 'gestor-campus'">
+                        <i class="fa-solid fa-building"></i>Gestão de Campus
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li class="hover-me">Edifício<i class="fa-solid fa-angle-right"></i>
+                                    <div class="sub-menu-2">
+                                        <ul>
+                                            <li><a [routerLink]="['/CriarEdificio']">Criar edifício</a></li>
+                                            <li><a [routerLink]="['/AtualizarEdificio']">Atualizar edifício</a></li>
+                                            <li><a [routerLink]="['/ListarEdificios']">Listar edifícios</a></li>
+                                            <li><a [routerLink]="['/ListarEdificiosMinMax']">Listar edifícios min max</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="hover-me">Piso<i class="fa-solid fa-angle-right"></i>
+                                    <div class="sub-menu-2">
+                                        <ul>
+                                            <li><a [routerLink]="['/CriarPiso']">Criar piso</a></li>
+                                            <li><a [routerLink]="['/AtualizarPiso']">Atualizar piso</a></li>
+                                            <li><a [routerLink]="['/ListarPisos']">Listar pisos de um edifício</a></li>
+                                            <li><a [routerLink]="['/ListarPisosConnection']">Listar pisos com passagem para outros edifícios</a></li>
+                                            <li><a [routerLink]="['/CarregarMapaPiso']">Carregar mapa de piso de edifício</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="hover-me">Passagem<i class="fa-solid fa-angle-right"></i>
+                                    <div class="sub-menu-2">
+                                        <ul>
+                                            <li><a [routerLink]="['/CriarPassagem']">Criar passagem</a></li>
+                                            <li><a [routerLink]="['/AtualizarPassagem']">Atualizar passagem</a></li>
+                                            <li><a [routerLink]="['/ListarPassagens']">Listar passagens entre dois edifícios</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="hover-me">Elevador<i class="fa-solid fa-angle-right"></i>
+                                    <div class="sub-menu-2">
+                                        <ul>
+                                            <li><a [routerLink]="['/CriarElevador']">Criar elevador</a></li>
+                                            <li><a [routerLink]="['/AtualizarElevador']">Atualizar elevador</a></li>
+                                            <li><a [routerLink]="['/ListarElevadores']">Listar elevadores em edifício</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="hover-me"><a href="#">Sala<i class="fa-solid fa-angle-right"></i></a>
+                                    <div class="sub-menu-2">
+                                        <ul>
+                                            <li><a [routerLink]="['/CriarSala']">Criar sala</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+        
+                    <li *ngIf="userData?.role === 'gestor-frota'">
+                        <i class="fa-solid fa-robot"></i>Gestão de Frota
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li class="hover-me">Robot<i class="fa-solid fa-angle-right"></i>
+                                    <div class="sub-menu-2">
+                                        <ul>
+                                            <li><a [routerLink]="['/CriarTipoDeRobot']">Criar novo tipo de robot</a></li>
+                                            <li><a [routerLink]="['/CriarRobot']">Criar novo robot</a></li>
+                                            <li><a [routerLink]="['/InibirRobot']">Inibir robot</a></li>
+                                            <li><a [routerLink]="['/ListarRobots']">Consultar todos os robots</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li *ngIf="userData?.role === 'gestor-tarefas'">
+                        <i class="fa-solid fa-list-check"></i>Gestão de Tarefas
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a [routerLink]="['/algav']">Percurso entre edifícios</a></li>
+                                <li><a href="#">Análise de complexidade</a></li>
+                                <li><a [routerLink]="['/ListarTarefas']">Consultar requisições de tarefas ainda não aprovadas</a></li>
+                                <li><a [routerLink]="['/FiltrarTarefas']">Pesquisar requisições de tarefas</a></li>
+                            </ul>
+                        </div>
+                    </li>
+        
+                    <li *ngIf="userData?.role === 'administrador-sistema'">
+                        <i class="fa-solid fa-cube"></i>Visualização 3D
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a [routerLink]="['/visualizacao']">Visualização interativa</a></li>
+                                <li><a href="#">Animação de percurso</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li *ngIf="userData?.role === 'administrador-sistema'">
+                        <i class="fa-solid fa-cube"></i>Utilizadores
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a [routerLink]="['/CriarUtilizador']">Criar utilizador</a></li>
+                                <li><a [routerLink]="['/ListarUtilizador']">Consultar utilizadores ainda não aprovados</a></li>
+                                <li><a [routerLink]="['/ListarTodosUtilizador']">Listar utilizadores no sistema</a></li>
+                            </ul>
+                        </div>
+                    </li>
+        
+                    <li *ngIf="userData?.role === 'administrador-sistema'">
+                        <i class="fa-solid fa-sitemap"></i>Administração de Sistemas
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a href="#">MBCO</a></li>
+                                <li><a href="#">Estratégia de recuperação de dados</a></li>
+                            </ul>
+                        </div>
+                    </li>
+        
+                    <li *ngIf="userData?.role === 'utente'">
+                        <i class="fa-solid fa-list-check"></i>Tarefas
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a [routerLink]="['/CriarTarefa']">Pedido de requisição de uma tarefa</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li><i class="fa-solid fa-person"></i>Conta
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li *ngIf="userData?.role === 'utente'">
+                                    <a [routerLink]="['/AlterarDados']">Alterar dados</a>
+                                </li>
+                                <li *ngIf="userData?.role === 'utente'">
+                                    <a [routerLink]="['/ApagarConta']">Cancelar conta</a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/Logout']">Terminar sessão</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+
+                    <li><i class="fa-solid fa-circle-info"></i>Informação
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a [routerLink]="['/SobreNos']">Sobre nós</a></li>
+                                <li><a [routerLink]="['/RGPD']">Relatório RGPD</a></li>
+                                <li><a [routerLink]="['/PoliticaPrivacidadeHome']">Política de privacidade</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

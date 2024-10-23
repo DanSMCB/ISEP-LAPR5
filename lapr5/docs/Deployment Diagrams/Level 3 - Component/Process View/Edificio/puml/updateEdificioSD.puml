@@ -1,0 +1,121 @@
+@startuml updateEdificioSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+!pragma teoz true
+box "<<System(C4)>>\n RobDroneGo" #LightSkyBlue
+    box "<<Container(C4)>>\n Campus Management" #LightGreen
+
+        box "<<Component(C4)>>\nInterface Adapter Layer" #Cyan
+            participant IEdificioController as  ICTL <<Component(C4)>>
+            participant EdificioController as  CTL <<Component(C4)>>
+            participant EdificioRepository as  DR <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nApplication Services Layer" #Red
+            participant EdificioService as  SV <<Component(C4)>>
+            participant IEdificioService as  ISV <<Component(C4)>>
+            participant IEdificioRepo as  IER <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nEntities\Core\Domanin Layer" #Yellow
+            participant "Edificio : Edificio" as  Edificio <<Component(C4)>>
+        end box
+    participant "EdificioDTO : EdificioDTO" as  DTO <<Component(C4)>>
+
+    end box
+end box
+
+
+ -> CTL: PUT Put(EdificioDto)
+ activate CTL
+alt If the Edificio exists in the system
+
+
+    CTL -> SV : UpdatingEdificio(EdificioDto)
+    activate SV
+    
+
+    SV -> DR: GetByID(EdificioId)
+    activate DR
+    DR --> SV: Edificio
+    deactivate DR
+
+    SV -> Edificio : Update(EdificioDTO)
+    activate Edificio
+    Edificio --> SV : Edificio
+    deactivate Edificio
+
+    SV -> DR : save(Edificio)
+    activate DR
+    DR --> SV : true
+     deactivate DR
+    SV -> DTO : toEdificioDTO(Edificio)
+    activate DTO
+    DTO -> DTO: toDTO(Edificio)
+    
+    DTO --> SV : EdificioDTO
+    deactivate DTO
+    SV -> CTL : EdificioDTO
+    deactivate SV
+     <-- CTL : EdificioDto + 200 OK
+     deactivate CTL
+
+
+
+
+else If a Edificio already exists with the id entered
+
+
+
+
+CTL -> SV : CreateEdificio(EdificioDto)
+activate CTL
+activate SV
+
+SV -> Edificio : Create(EdificioDto)
+activate Edificio
+Edificio --> SV : Edificio
+deactivate Edificio
+
+SV -> DR : save(Edificio)
+activate DR
+DR --> SV : false
+deactivate DR
+SV --> CTL : BadRequestException
+deactivate SV
+ <-- CTL : BadRequestException
+
+
+ <-- CTL: 400 BAD REQUEST
+deactivate CTL
+
+
+
+
+else If the attributes do not respect the business rules
+
+
+CTL -> SV : CreateEdificio(EdificioDto)
+activate CTL
+activate SV
+
+SV -> Edificio : Create(EdificioDto)
+activate Edificio
+Edificio --> SV : BusinessRuleValidationException
+deactivate Edificio
+
+SV --> CTL : BusinessRuleValidationException
+deactivate SV
+ <-- CTL : BusinessRuleValidationException
+
+ <-- CTL: 400 BAD REQUEST
+deactivate CTL
+
+
+end
+
+@enduml

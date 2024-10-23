@@ -1,0 +1,53 @@
+<app-home></app-home>
+
+<div class="menu-container">
+    <h2>Criar Sala</h2>
+    <form #salaForm="ngForm"
+            (ngSubmit)="createSala(salaNome.value, salaDescricao.value, salaCategoria.value, salaTamanho.value, salaEdificio.value, salaPiso.value)">
+        
+    <div class="form-group">
+        <label for="new-sala">Nome: </label>
+        <input id="new-sala" type="text" #salaNome="ngModel" ngModel name="salaNome" /> 
+        <div *ngIf="salaNome.errors?.['required']">
+            Nome é obrigatório
+        </div>
+        <br>
+        <label for="new-sala">Descrição: </label>
+        <input id="new-sala" type="text" #salaDescricao="ngModel" ngModel name="salaDescricao" /> 
+        <div *ngIf="salaDescricao.errors?.['required']">
+            Descrição é obrigatório
+        </div>
+        <br>
+        <label for="new-sala">Categoria: </label>
+        <input id="new-sala" type="text" #salaCategoria="ngModel" ngModel name="salaCategoria" /> 
+        <div *ngIf="salaCategoria.errors?.['required']">
+            Categoria é obrigatório
+        </div>
+        <br>
+        <label for="new-sala">Tamanho: </label>
+        <input id="new-sala" type="text" #salaTamanho="ngModel" ngModel name="salaTamanho" /> 
+        <div *ngIf="salaTamanho.errors?.['required']">
+            Tamanho é obrigatório
+        </div>
+        <br>
+        <label for="new-sala">Edifício: </label>
+        <input id="new-sala" type="text" #salaEdificio="ngModel" ngModel name="salaEdificio" /> 
+        <div *ngIf="salaEdificio.errors?.['required']">
+            Edifício é obrigatório
+        </div>
+        <br>
+        <label for="new-sala">Piso: </label>
+        <input id="new-sala" type="text" #salaPiso="ngModel" ngModel name="salaPiso" /> 
+        <div *ngIf="salaPiso.errors?.['required']">
+            Piso é obrigatório
+        </div>
+        <br>
+        <div class="form-buttons">
+            <button type="submit" class="registar-button" id="registar-button">
+                Criar
+            </button>
+            <button class="registar-button" (click)="goBack()">Voltar</button>
+        </div>
+    </div>
+    </form>
+</div>

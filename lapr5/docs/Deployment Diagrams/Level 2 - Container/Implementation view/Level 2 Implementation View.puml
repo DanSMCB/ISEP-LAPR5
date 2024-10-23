@@ -1,0 +1,61 @@
+
+@startuml
+component "<<component>>\n<<Context(C4)>>\nRobDroneGo" as c2 {
+  port 1
+  port 2
+  port 3
+  port 4
+  port 5
+  port 6
+  component "<<component>>\nMasterData" as md{
+    port 7 
+    port 8
+    port 9
+    portout 16
+    portout 18
+  }
+  component "<<component>>\nUI" as ui{
+    port 10
+    port 11
+    port 12
+    portout 17
+  }
+  component "<<component>>\nPlanning" as pc{
+    portout 13
+    
+  }
+
+
+}
+
+interface UITarefa as UT
+interface UIGestorFrota as UGF
+interface UIGestorCampus as UGC
+
+
+interface APITarefa as AT
+interface APIGestorFrota as AGF
+interface APIGestorCampus as AGC
+
+
+
+
+UT --- 1
+AT --- 4
+UGF --- 2
+AGF --- 5
+UGC --- 3
+AGC --- 6
+
+1 -- 10
+2 -- 11
+3 -- 12
+4 -- 7
+5 -- 8
+6 -- 9
+16 -- 17
+13 -- 18
+
+
+
+@enduml

@@ -1,0 +1,90 @@
+@startuml listRobotSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+
+!pragma teoz true
+box "<<System(C4)>>\n RobDroneGo" #LightSkyBlue
+    box "<<Container(C4)>>\n Fleet Management" #LightGreen
+
+        box "<<Component(C4)>>\nInterface Adapter Layer" #Cyan
+            participant IRobotController as  ICTL <<Component(C4)>>
+            participant RobotController as  CTL <<Component(C4)>>
+            participant RobotRepository as  DR <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nApplication Services Layer" #Red
+            participant RobotService as  SV <<Component(C4)>>
+            participant IRobotService as  ISV <<Component(C4)>>
+            participant IRobotRepo as  IER <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nEntities\Core\Domanin Layer" #Yellow
+            participant "Robot : Robot" as  Robot <<Component(C4)>>
+        end box
+    participant "RobotDTO : RobotDTO" as  DTO <<Component(C4)>>
+
+    end box
+end box   
+
+
+
+ -> CTL: GET getAllRobot()
+activate CTL
+alt If there are Robot on the system
+
+
+    CTL -> SV : getAllRobot()
+    activate SV
+
+    SV -> DR : getAll()
+    activate DR
+
+    DR --> SV : RobotList
+    deactivate DR
+
+
+    SV -> DTO : toDTO(RobotList)
+    activate DTO 
+    DTO -> DTO: toDTO(RobotList)
+    DTO --> SV : List
+    deactivate DTO
+    deactivate DR
+    SV --> CTL: List
+    deactivate SV
+
+     <-- CTL: 200 OK + List
+    deactivate CTL
+
+else If there are no Robot on the system
+    
+    
+    CTL -> SV : getAllRobot() 
+    activate SV
+    activate CTL
+    
+  
+
+    
+    SV -> DR : getAll()
+    activate DR
+
+    DR -> SV : null
+    deactivate DR
+
+    SV --> CTL : null
+    deactivate SV
+     <-- CTL: 200 OK + null (empty List)
+    deactivate CTL
+
+    
+   
+
+
+
+end
+
+@enduml

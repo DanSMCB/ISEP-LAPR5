@@ -1,0 +1,38 @@
+@startuml updateRobotSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+box "<<RobDroneGo(C4)>>\n\tSystem"
+participant FleetManagement as FM <<Container(C4)>>
+end box
+
+
+
+ -> FM: PATCH UpdateRobot(robotDTO)
+activate FM
+
+alt If the Robot ID matches and the information\n respects business rules
+ <-- FM : 200 OK(updatedObj)
+
+
+
+else If the inserted info does not respect business rules
+
+ <-- FM : 400 Bad Request
+
+ 
+else If the ID does not match any Robot
+
+ <-- FM : 400 Bad Request
+deactivate FM
+
+
+end
+
+
+@enduml

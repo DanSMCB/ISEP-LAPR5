@@ -1,0 +1,28 @@
+<app-home></app-home>
+<div class="tabela-container">
+    <h2>Lista de todos os utilizadores no sistema</h2>
+    <table>
+        <tr>
+            <th>Primeiro nome</th>
+            <th>Último nome</th>
+            <th>Email</th>
+            <th>Cargo</th>
+            <th>Número de telefone</th>
+            <th>Número de Contribuinte</th>
+        </tr>
+        <tr *ngFor="let utilizador of paginatedUtilizadores">
+            <td>{{ utilizador.firstName }}</td>
+            <td>{{ utilizador.lastName }}</td>
+            <td>{{ utilizador.email }}</td>
+            <td>{{ utilizador.role }}</td>
+            <td>{{ utilizador.phone }}</td>
+            <td>{{ utilizador.taxpayer }}</td>
+        </tr>
+    </table>
+    <div class="pagination-container">
+        <button (click)="prevPage()" [disabled]="startIndex === 0">Anterior</button>
+        <span class="page-number">Página {{ currentPage }}</span>
+        <button (click)="nextPage()" [disabled]="endIndex >= utilizadores.length">Próxima</button>
+    </div>
+    <button class="registar-button" (click)="goBack()">Voltar</button>
+</div>

@@ -1,0 +1,32 @@
+
+@startuml
+component "<<component>>\n<<Context(C4)>>\nRobDroneGo\nFrontEnd" as c2 {
+
+  component "<<component>>\n<<Component(C4)>>\nView" as view{
+  }
+  component "<<component>>\n<<Component(C4)>>\nController" as ctrl{
+  }
+  
+  component "<<component>>\n<<Component(C4)>>\nService" as ser{
+    
+  }
+  
+  component "<<component>>\n<<Component(C4)>>\nModel" as model{
+    
+  }
+  
+interface IController as ictrl
+interface IService as iser
+interface IModel as imodel
+
+}
+
+view ---( ictrl
+ictrl --- ctrl
+ctrl ---( iser
+iser --- ser  
+ctrl ---( imodel 
+imodel --- model
+ser ---( imodel
+
+@enduml

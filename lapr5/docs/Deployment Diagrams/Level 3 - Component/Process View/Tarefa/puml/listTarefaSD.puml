@@ -1,0 +1,90 @@
+@startuml listTarefaSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+
+!pragma teoz true
+box "<<System(C4)>>\n RobDroneGo" #LightSkyBlue
+    box "<<Container(C4)>>\n Task Management" #LightGreen
+
+        box "<<Component(C4)>>\nInterface Adapter Layer" #Cyan
+            participant ITarefaController as  ICTL <<Component(C4)>>
+            participant TarefaController as  CTL <<Component(C4)>>
+            participant TarefaRepository as  DR <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nApplication Services Layer" #Red
+            participant TarefaService as  SV <<Component(C4)>>
+            participant ITarefaService as  ISV <<Component(C4)>>
+            participant ITarefaRepo as  IER <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nEntities\Core\Domanin Layer" #Yellow
+            participant "Tarefa : Tarefa" as  tarefa <<Component(C4)>>
+        end box
+    participant "TarefaDTO : TarefaDTO" as  DTO <<Component(C4)>>
+
+    end box
+end box   
+
+
+
+ -> CTL: GET getAllTarefa()
+activate CTL
+alt If there are Tarefa on the system
+
+
+    CTL -> SV : getAllTarefa()
+    activate SV
+
+    SV -> DR : getAll()
+    activate DR
+
+    DR --> SV : TarefaList
+    deactivate DR
+
+
+    SV -> DTO : toDTO(TarefaList)
+    activate DTO 
+    DTO -> DTO: toDTO(TarefaList)
+    DTO --> SV : List
+    deactivate DTO
+    deactivate DR
+    SV --> CTL: List
+    deactivate SV
+
+     <-- CTL: 200 OK + List
+    deactivate CTL
+
+else If there are no Tarefa on the system
+    
+    
+    CTL -> SV : getAllTarefa() 
+    activate SV
+    activate CTL
+    
+  
+
+    
+    SV -> DR : getAll()
+    activate DR
+
+    DR -> SV : null
+    deactivate DR
+
+    SV --> CTL : null
+    deactivate SV
+     <-- CTL: 200 OK + null (empty List)
+    deactivate CTL
+
+    
+   
+
+
+
+end
+
+@enduml

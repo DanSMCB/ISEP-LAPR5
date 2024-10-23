@@ -1,0 +1,115 @@
+@startuml createUserSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+!pragma teoz true
+box "<<System(C4)>>\n RobDroneGo" #LightSkyBlue
+    box "<<Container(C4)>>\n User Management" #LightGreen
+
+        box "<<Component(C4)>>\nInterface Adapter Layer" #Cyan
+            participant IUserController as  ICTL <<Component(C4)>>
+            participant UserController as  CTL <<Component(C4)>>
+            participant UserRepository as  DR <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nApplication Services Layer" #Red
+            participant UserService as  SV <<Component(C4)>>
+            participant IUserService as  ISV <<Component(C4)>>
+            participant IUserRepo as  IER <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nEntities\Core\Domanin Layer" #Yellow
+            participant "User : User" as  user <<Component(C4)>>
+        end box
+    participant "UserDTO : UserDTO" as  DTO <<Component(C4)>>
+
+    end box
+end box   
+
+
+ -> CTL: POST Post(UserDto)
+alt If the User doesn't exist in the system
+activate CTL
+CTL -> SV : CreateUser(UserDto)
+activate SV
+
+SV -> user : Create(UserDto)
+activate user
+user --> SV : User
+deactivate user
+
+SV -> DR : save(User)
+activate DR
+DR --> SV : true
+deactivate DR
+
+SV -> DTO : toUserDTO(user)
+activate DTO
+DTO --> SV : UserDto
+deactivate DTO
+SV --> CTL : UserDto
+deactivate SV
+ <-- CTL : UserDto
+
+ <-- CTL: 200 OK
+deactivate CTL
+
+
+
+
+
+else If a User already exists with the id entered
+
+
+
+
+CTL -> SV : CreateUser(UserDto)
+activate CTL
+activate SV
+
+SV -> user : Create(UserDto)
+activate user
+user --> SV : User
+deactivate user
+
+SV -> DR : save(User)
+activate DR
+DR --> SV : false
+deactivate DR
+SV --> CTL : BadRequestException
+deactivate SV
+ <-- CTL : BadRequestException
+
+
+ <-- CTL: 400 BAD REQUEST
+deactivate CTL
+
+
+
+
+else If the attributes do not respect the business rules
+
+
+CTL -> SV : CreateUser(UserDto)
+activate CTL
+activate SV
+
+SV -> user : Create(UserDto)
+activate user
+user --> SV : BusinessRuleValidationException
+deactivate user
+
+SV --> CTL : BusinessRuleValidationException
+deactivate SV
+ <-- CTL : BusinessRuleValidationException
+
+ <-- CTL: 400 BAD REQUEST
+deactivate CTL
+
+
+end
+
+@enduml

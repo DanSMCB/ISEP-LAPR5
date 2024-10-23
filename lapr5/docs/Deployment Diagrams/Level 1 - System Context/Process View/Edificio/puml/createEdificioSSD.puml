@@ -1,0 +1,29 @@
+@startuml createEdificioSSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+actor Gestor de Campus as GC
+participant RobDroneGo as system <<System(C4)>>
+
+
+GC -> system: I want to create a new Edificio
+activate system
+
+system --> GC: asks for the details on the new Edificio
+deactivate system
+
+GC -> system: inserts the information about the new Edificio
+activate system
+
+system --> GC: informs about the success of the operation
+deactivate system
+
+
+deactivate system
+deactivate GC
+
+@enduml

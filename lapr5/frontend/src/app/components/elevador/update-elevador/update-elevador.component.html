@@ -1,0 +1,33 @@
+<app-home></app-home>
+<div class="menu-container">
+    <h2>Atualizar Elevador</h2>
+    <form #elevadorForm="ngForm" (ngSubmit)="updateElevador(elevadorCodigo.value, elevadorEdificio.value, parsePisos(elevadorPisos.value))">
+        
+        <div class="form-group">
+            <label for="new-elevador">Codigo: </label>
+            <input id="new-elevador" type="text" #elevadorCodigo="ngModel" ngModel name="elevadorCodigo" /> 
+            <div *ngIf="elevadorCodigo.errors?.['required']">
+                Codigo é obrigatório
+            </div>
+            <br>
+            <label for="new-elevador">Edificio: </label>
+            <input id="new-elevador" type="text" #elevadorEdificio="ngModel" ngModel name="elevadorEdificio"  /> 
+            <div *ngIf="elevadorEdificio.errors?.['required']">
+                Edificio é obrigatório
+            </div>
+            <br>
+            <label for="new-elevador">Pisos: </label>
+            <input id="new-elevador" type="text" #elevadorPisos="ngModel" ngModel name="elevadorPisos" /> 
+            <div *ngIf="elevadorPisos.errors?.['required']">
+                Pisos é obrigatório
+            </div>
+            <br>
+            <div class="form-buttons">
+                <button type="submit" class="registar-button" id="registar-button">
+                    Atualizar
+                </button>
+                <button class="registar-button" (click)="goBack()">Voltar</button>
+            </div>
+        </div>
+    </form>
+</div>

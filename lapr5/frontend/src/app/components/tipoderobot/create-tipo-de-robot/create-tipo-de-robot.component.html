@@ -1,0 +1,23 @@
+<app-home></app-home>
+
+<div class="menu-container">
+  <h2>Criar Tipo de Robot</h2>
+  <form #tipoDeRobotForm="ngForm" (ngSubmit)="createTipoDeRobot(tipoDeRobotDescricao.value, parseTarefas(tipoDeRobotTarefas.value))">
+    <div class="form-group">
+      <div class="input-group">
+        <label for="new-tipoDeRobot">Descrição: </label>
+        <input id="new-tipoDeRobot" type="text" #tipoDeRobotDescricao="ngModel" ngModel name="tipoDeRobotDescricao" />
+      </div>
+      <div class="input-group">
+        <label for="new-tipoDeRobot">Tarefas: </label>
+        <input id="new-tipoDeRobot" type="text" #tipoDeRobotTarefas="ngModel" ngModel name="tipoDeRobotTarefas" />
+      </div>
+      <div class="form-buttons">
+        <button type="submit" class="registar-button" id="registar-button">
+          Criar
+        </button>
+        <button class="registar-button" (click)="goBack()">Voltar</button>
+      </div>
+    </div>
+  </form>
+</div>

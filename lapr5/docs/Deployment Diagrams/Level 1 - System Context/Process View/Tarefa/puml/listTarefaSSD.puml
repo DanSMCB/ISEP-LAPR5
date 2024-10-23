@@ -1,0 +1,22 @@
+@startuml listTarefaSSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+actor "Gestor de Tarefas" as GT
+participant RobDroneGo as system <<System(C4)>>
+
+
+GT -> system: I want to consult the details of all Tarefas in the system
+activate system
+
+system --> GT: displays a list of Tarefas and its details
+deactivate system
+
+deactivate system
+deactivate GT
+
+@enduml

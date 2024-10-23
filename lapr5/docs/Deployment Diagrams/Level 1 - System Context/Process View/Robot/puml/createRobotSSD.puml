@@ -1,0 +1,29 @@
+@startuml createRobotSSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+actor "Gestor de Frota" as GF
+participant RobDroneGo as system <<System(C4)>>
+
+
+GF -> system: I want to create a new Robot
+activate system
+
+system --> GF: asks for the details on the new Robot
+deactivate system
+
+GF -> system: inserts the information about the new Robot
+activate system
+
+system --> GF: informs about the success of the operation
+deactivate system
+
+
+deactivate system
+deactivate GF
+
+@enduml

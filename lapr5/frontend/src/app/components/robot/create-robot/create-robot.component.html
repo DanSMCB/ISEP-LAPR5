@@ -1,0 +1,56 @@
+<app-home></app-home>
+<div class="menu-container">
+    <h2>Criar Robot</h2>
+    <form #robotForm="ngForm" (ngSubmit)="createRobot(robotNumeroSerie.value, robotCodigo.value, robotNickname.value, robotMarca.value, robotEstado.value, robotTipodeRobot.value)">
+        <div class="form-group">
+            <div class="input-group">
+                <label for="new-robot">Número de Série: </label>
+                <input robotNumeroSerie="new-robot" type="text" #robotNumeroSerie="ngModel" ngModel name="robotNumeroSerie" />
+            </div>
+            <div *ngIf="robotNumeroSerie.errors?.['required']">
+                Número de Série é obrigatório
+            </div>
+            <div class="input-group">
+                <label for="new-robot">Código: </label>
+                <input robotCodigo="new-robot" type="text" #robotCodigo="ngModel" ngModel name="robotCodigo" />
+            </div>
+            <div *ngIf="robotCodigo.errors?.['required']">
+                Código é obrigatório
+            </div>
+            <div class="input-group">
+                <label for="new-robot">Nickname: </label>
+                <input robotNickname="new-robot" type="text" #robotNickname="ngModel" ngModel name="robotNickname" />
+            </div>
+            <div *ngIf="robotNickname.errors?.['required']">
+                Nickname é obrigatório
+            </div>
+            <div class="input-group">
+                <label for="new-robot">Marca: </label>
+                <input robotMarca="new-robot" type="text" #robotMarca="ngModel" ngModel name="robotMarca" />
+            </div>
+            <div *ngIf="robotMarca.errors?.['required']">
+                Marca é obrigatório
+            </div>
+            <div class="input-group">
+                <label for="new-robot">Estado: </label>
+                <input robotEstado="new-robot" type="text" #robotEstado="ngModel" ngModel name="robotEstado" />
+            </div>
+            <div *ngIf="robotEstado.errors?.['required']">
+                Estado é obrigatório
+            </div>
+            <div class="input-group">
+                <label for="new-robot">Tipo de Robot: </label>
+                <input robotTipodeRobot="new-robot" type="text" #robotTipodeRobot="ngModel" ngModel name="robotTipodeRobot" />
+            </div>
+            <div *ngIf="robotTipodeRobot.errors?.['required']">
+                Tipo de Robot é obrigatório
+            </div>
+            <div class="form-buttons">
+                <button type="submit" class="registar-button" id="registar-button">
+                    Criar
+                </button>
+                <button class="registar-button" (click)="goBack()">Voltar</button>
+            </div>
+        </div>
+    </form>
+</div>

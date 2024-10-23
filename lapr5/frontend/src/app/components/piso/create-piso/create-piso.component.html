@@ -1,0 +1,24 @@
+<app-home></app-home>
+<div class="menu-container">
+    <h2>Criar Piso</h2>
+    <form #pisoForm="ngForm" (ngSubmit)="createPiso(pisoEdificio.value, pisoPiso.value, pisoDescricao.value)">
+        <div class="form-input">
+            <label for="new-edificio">Edificio: </label>
+            <input name="new-edificio" type="text" #pisoEdificio="ngModel" ngModel />
+            <div *ngIf="pisoEdificio.errors?.['required']">Edificio é obrigatório</div>
+        </div>
+        <div class="form-input">
+            <label for="new-piso">Piso: </label>
+            <input name="new-piso" type="text" #pisoPiso="ngModel" ngModel />
+            <div *ngIf="pisoPiso.errors?.['required']">Piso é obrigatório</div>
+        </div>
+        <div class="form-input">
+            <label for="new-descricao">Descricao: </label>
+            <input name="new-descricao" type="text" #pisoDescricao="ngModel" ngModel />
+        </div>
+        <div class="form-buttons">
+            <button type="submit" class="registar-button" id="registar-button">Criar</button>
+            <button class="registar-button" (click)="goBack()">Voltar</button>
+        </div>
+    </form>
+</div>

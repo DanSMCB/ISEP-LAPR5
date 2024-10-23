@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1482px" preserveAspectRatio="none" style="width:983px;height:1482px;background:#FFFFFF;" version="1.1" viewBox="0 0 983 1482" width="983px" zoomAndPan="magnify"><defs/><g><!--MD5=[a79645e74fdddf168a098e501fbfe8e0]
+cluster c2--><g id="cluster_c2"><rect fill="none" height="1356" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="849" x="7" y="120"/><rect fill="none" height="10" style="stroke:#181818;stroke-width:1.0;" width="15" x="836" y="125"/><rect fill="none" height="2" style="stroke:#181818;stroke-width:1.0;" width="4" x="834" y="127"/><rect fill="none" height="2" style="stroke:#181818;stroke-width:1.0;" width="4" x="834" y="131"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="137" x="363" y="145.9951">&lt;&lt;component&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="143" x="360" y="162.292">&lt;&lt;Context(C4)&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="100" x="381.5" y="178.5889">RobDroneGo</text></g><!--MD5=[013d08b09368979f9e439724448b2f30]
+entity ictrl--><g id="elem_ictrl"><ellipse cx="125" cy="416" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="90" y="445.9951">IController</text></g><!--MD5=[07a8e3d737531d8d0d512dbe2e0727e6]
+entity iser--><g id="elem_iser"><ellipse cx="130" cy="795" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="103.5" y="824.9951">IService</text></g><!--MD5=[8774043c314f56bb70f8814971e01121]
+entity idto--><g id="elem_idto"><ellipse cx="107" cy="1231" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34" x="90" y="1260.9951">IDTO</text></g><!--MD5=[edce35e46a1ff08f1f2bf89805c42f99]
+entity irepo--><g id="elem_irepo"><ellipse cx="212" cy="1231" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="192" y="1260.9951">IRepo</text></g><!--MD5=[6e3613e32beee7422e6d43c39f9fbf55]
+entity imodel--><g id="elem_imodel"><ellipse cx="315" cy="1231" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45" x="292.5" y="1260.9951">IModel</text></g><!--MD5=[1b8a1ab6529401160542d7fcf05d6187]
+entity ipers--><g id="elem_ipers"><ellipse cx="406" cy="1113" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="363.5" y="1142.9951">IPersistence</text></g><!--MD5=[00a3a3c2a849751f3ca4bbe150468667]
+entity ids--><g id="elem_ids"><ellipse cx="552" cy="1113" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="506.5" y="1142.9951">IDataSchema</text></g><!--MD5=[e4ed6f4fad4e9954f808e23f7c3b28d4]
+entity route--><g id="elem_route"><rect fill="#F1F1F1" height="78.8906" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="169" x="40.5" y="187"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="189.5" y="192"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="187.5" y="194"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="187.5" y="198"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="55.5" y="219.9951">«component»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="55.5" y="236.292">«Component(C4)»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="55.5" y="252.5889">Route</text></g><!--MD5=[9b5d37bdb7be2cac1b39a82444f5f5a6]
+entity ctrl--><g id="elem_ctrl"><rect fill="#F1F1F1" height="78.8906" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="169" x="40.5" y="566"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="189.5" y="571"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="187.5" y="573"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="187.5" y="577"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="55.5" y="598.9951">«component»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="55.5" y="615.292">«Component(C4)»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="55.5" y="631.5889">Controller</text></g><!--MD5=[9d986ba0f27b6c53af29a9efbb55ef40]
+entity ser--><g id="elem_ser"><rect fill="#F1F1F1" height="78.8906" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="169" x="59.5" y="945"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="208.5" y="950"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="206.5" y="952"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="206.5" y="956"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="74.5" y="977.9951">«component»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="74.5" y="994.292">«Component(C4)»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="74.5" y="1010.5889">Service</text></g><!--MD5=[db8c2b8734ce843b840728726fa2f232]
+entity dto--><g id="elem_dto"><rect fill="#F1F1F1" height="78.8906" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="169" x="22.5" y="1381"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="171.5" y="1386"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="169.5" y="1388"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="169.5" y="1392"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="37.5" y="1413.9951">«component»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="37.5" y="1430.292">«Component(C4)»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="37.5" y="1446.5889">DTO</text></g><!--MD5=[76aeba0ab875879ea5d21554d0007a3a]
+entity model--><g id="elem_model"><rect fill="#F1F1F1" height="78.8906" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="169" x="230.5" y="1381"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="379.5" y="1386"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="377.5" y="1388"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="377.5" y="1392"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="245.5" y="1413.9951">«component»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="245.5" y="1430.292">«Component(C4)»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="245.5" y="1446.5889">Model</text></g><!--MD5=[ae38f3df50bbf8acf027574e6a8bac37]
+entity repo--><g id="elem_repo"><rect fill="#F1F1F1" height="78.8906" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="169" x="263.5" y="945"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="412.5" y="950"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="410.5" y="952"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="410.5" y="956"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="278.5" y="977.9951">«component»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="278.5" y="994.292">«Component(C4)»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="278.5" y="1010.5889">Repository</text></g><!--MD5=[15a87683b3e417ba6ca4d5a8c3a127f0]
+entity pers--><g id="elem_pers"><rect fill="#F1F1F1" height="78.8906" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="169" x="467.5" y="945"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="616.5" y="950"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="614.5" y="952"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="614.5" y="956"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="482.5" y="977.9951">«component»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="482.5" y="994.292">«Component(C4)»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="482.5" y="1010.5889">Persistence</text></g><!--MD5=[727c1040af9be188ab17d19c49f9ac10]
+entity ds--><g id="elem_ds"><rect fill="#F1F1F1" height="78.8906" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="169" x="671.5" y="945"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="820.5" y="950"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="818.5" y="952"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="818.5" y="956"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="686.5" y="977.9951">«component»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="686.5" y="994.292">«Component(C4)»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="686.5" y="1010.5889">DataSchema</text></g><!--MD5=[645d8587175d8f7ad110cd370775931d]
+entity API--><g id="elem_API"><ellipse cx="125" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="21" x="114.5" y="43.9951">API</text></g><!--MD5=[3891647d793f79d1d2866de01e610aef]
+entity MDBAPI--><g id="elem_MDBAPI"><ellipse cx="928" cy="795" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="879.5" y="824.9951">MONGODBAPI</text></g><!--MD5=[32c75168e7ef2b87baa3fcb44c9602fe]
+link API to route--><g id="link_API_route"><path d="M125,23.25 C125,50.08 125,136.06 125,186.86 " fill="none" id="API-route" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[883a58f953bfa1f2f06c89721f4034f9]
+link route to ictrl--><g id="link_route_ictrl"><path d="M125,266.35 C125,306.12 125,366.25 125,396.39 " fill="none" id="route-to-ictrl" style="stroke:#181818;stroke-width:1.0;"/><path d="M133.4572,403.6118 A9,9 0 0 0 116.5428 403.6118" fill="none" style="stroke:#181818;stroke-width:1.5;"/></g><!--MD5=[a1ccd68bcd43f1990aa5bf03eb84b692]
+link ictrl to ctrl--><g id="link_ictrl_ctrl"><path d="M125,425.06 C125,448.96 125,520.62 125,565.82 " fill="none" id="ictrl-ctrl" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[1c698f5c3da7d1bc2130820a9c410fef]
+link ctrl to idto--><g id="link_ctrl_idto"><path d="M89.39,645.31 C60.31,681.14 24,737.24 24,794 C24,794 24,794 24,985.5 C24,1075.21 74.72,1174.07 96.86,1212.96 " fill="none" id="ctrl-to-idto" style="stroke:#181818;stroke-width:1.0;"/><path d="M107.822,1214.9863 A9,9 0 0 0 93.202 1223.4925" fill="none" style="stroke:#181818;stroke-width:1.5;"/></g><!--MD5=[c1f52a8848ba99d8c41772ffb1e6ee28]
+link idto to dto--><g id="link_idto_dto"><path d="M107,1240.06 C107,1263.96 107,1335.62 107,1380.82 " fill="none" id="idto-dto" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[dbd788fd74081b65e0ef4eb3b66f3c86]
+link ctrl to iser--><g id="link_ctrl_iser"><path d="M126.04,645.35 C127.1,685.12 128.7,745.25 129.5,775.39 " fill="none" id="ctrl-to-iser" style="stroke:#181818;stroke-width:1.0;"/><path d="M138.1506,782.3835 A9,9 0 0 0 121.2424 782.8424" fill="none" style="stroke:#181818;stroke-width:1.5;"/></g><!--MD5=[688cc4c5bcf53ee9ce0017c8d0c6c4c1]
+link iser to ser--><g id="link_iser_ser"><path d="M130.6,804.06 C132.39,827.96 137.74,899.62 141.11,944.82 " fill="none" id="iser-ser" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[e5862738fb0154971a41481afc7dbeb5]
+link ser to idto--><g id="link_ser_idto"><path d="M138.14,1024.24 C130.05,1077.68 115.79,1171.88 109.79,1211.56 " fill="none" id="ser-to-idto" style="stroke:#181818;stroke-width:1.0;"/><path d="M117.0933,1219.8554 A9,9 0 0 0 100.3703 1217.3179" fill="none" style="stroke:#181818;stroke-width:1.5;"/></g><!--MD5=[c5c733aa97ad23979e792339f61b5afd]
+link ser to imodel--><g id="link_ser_imodel"><path d="M171.1,1024.24 C208.95,1078.36 276.05,1174.31 303.16,1213.07 " fill="none" id="ser-to-imodel" style="stroke:#181818;stroke-width:1.0;"/><path d="M314.3101,1214.2632 A9,9 0 0 0 300.4442 1223.95" fill="none" style="stroke:#181818;stroke-width:1.5;"/></g><!--MD5=[0841d7c76800534551b68e7fd67e4252]
+link imodel to model--><g id="link_imodel_model"><path d="M315,1240.06 C315,1263.96 315,1335.62 315,1380.82 " fill="none" id="imodel-model" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[2cf223f31583be91f060eb60353987e6]
+link repo to imodel--><g id="link_repo_imodel"><path d="M342.77,1024.24 C335.56,1077.68 322.84,1171.88 317.49,1211.56 " fill="none" id="repo-to-imodel" style="stroke:#181818;stroke-width:1.0;"/><path d="M324.9211,1219.7024 A9,9 0 0 0 308.1565 1217.4558" fill="none" style="stroke:#181818;stroke-width:1.5;"/></g><!--MD5=[63bb9e4a570f1149ed2da83f35660b33]
+link repo to irepo--><g id="link_repo_irepo"><path d="M326.45,1024.24 C293.79,1082.95 233.76,1190.88 216.66,1221.63 " fill="none" id="repo-irepo" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[d41d1a903afc108a89d124039b83efd2]
+link ser to irepo--><g id="link_ser_irepo"><path d="M154.77,1024.24 C169.67,1077.79 195.95,1172.29 206.94,1211.82 " fill="none" id="ser-to-irepo" style="stroke:#181818;stroke-width:1.0;"/><path d="M216.9892,1216.3927 A9,9 0 0 0 200.6967 1220.9373" fill="none" style="stroke:#181818;stroke-width:1.5;"/></g><!--MD5=[72c67bdb0fe4883ae84cb41274fa3251]
+link ds to ids--><g id="link_ds_ids"><path d="M693.68,1024.14 C645.88,1053.79 584.29,1091.98 561.25,1106.27 " fill="none" id="ds-ids" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[50c53b6b51f46f433caa938601862236]
+link repo to ids--><g id="link_repo_ids"><path d="M410.32,1024.14 C453.08,1050.66 506.87,1084.02 534.24,1100.99 " fill="none" id="repo-to-ids" style="stroke:#181818;stroke-width:1.0;"/><path d="M544.5914,1097.4604 A9,9 0 0 0 535.6767 1111.835" fill="none" style="stroke:#181818;stroke-width:1.5;"/></g><!--MD5=[cace0d55e0d30252f8fc6b02f0e08758]
+link pers to ids--><g id="link_pers_ids"><path d="M552,1024.14 C552,1047.38 552,1075.86 552,1093.98 " fill="none" id="pers-to-ids" style="stroke:#181818;stroke-width:1.0;"/><path d="M560.4572,1100.9218 A9,9 0 0 0 543.5428 1100.9218" fill="none" style="stroke:#181818;stroke-width:1.5;"/></g><!--MD5=[4272600fa3d276dbbd7774064f89cb5a]
+link pers to ipers--><g id="link_pers_ipers"><path d="M507.4,1024.14 C474.86,1052.33 433.41,1088.25 415.24,1104 " fill="none" id="pers-ipers" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[5eb9dab31628dd97b679cad2b48abef1]
+link repo to ipers--><g id="link_repo_ipers"><path d="M365.72,1024.14 C376.52,1047.71 389.8,1076.67 398.09,1094.74 " fill="none" id="repo-to-ipers" style="stroke:#181818;stroke-width:1.0;"/><path d="M408.7315,1097.6738 A9,9 0 0 0 393.3598 1104.7313" fill="none" style="stroke:#181818;stroke-width:1.5;"/></g><!--MD5=[abad69a3b8ce41877011d77f2aa8f0f5]
+reverse link MDBAPI to pers--><g id="link_MDBAPI_pers"><path d="M909.73,805.11 C859.79,830.01 718.82,900.31 629.48,944.86 " fill="none" id="MDBAPI-backto-pers" style="stroke:#181818;stroke-width:1.0;"/><path d="M912.1746,794.4422 A9,9 0 0 0 919.739 809.571" fill="none" style="stroke:#181818;stroke-width:1.5;"/></g><!--MD5=[becbf831ab8461aeb6af3b710cd193ff]
+@startuml
+component "<<component>>\n<<Context(C4)>>\nRobDroneGo" as c2 {
+
+  component "<<component>>\n<<Component(C4)>>\nRoute" as route{
+  }
+  component "<<component>>\n<<Component(C4)>>\nController" as ctrl{
+  }
+  
+  component "<<component>>\n<<Component(C4)>>\nService" as ser{
+    
+  }
+  component "<<component>>\n<<Component(C4)>>\nDTO" as dto{
+    
+  }
+  component "<<component>>\n<<Component(C4)>>\nModel" as model{
+    
+  }
+  component "<<component>>\n<<Component(C4)>>\nRepository" as repo{
+    
+  }
+  component "<<component>>\n<<Component(C4)>>\nPersistence" as pers{
+    
+  }
+  component "<<component>>\n<<Component(C4)>>\nDataSchema" as ds{
+    
+    
+  }
+interface IController as ictrl
+interface IService as iser
+interface IDTO as idto
+interface IRepo as irepo
+interface IModel as imodel
+interface IPersistence as ipers
+interface IDataSchema as ids
+
+}
+
+interface API as API
+interface MONGODBAPI as MDBAPI
+
+
+
+
+
+
+
+
+
+
+
+
+
+API - - - route
+route - - -( ictrl
+ictrl - - - ctrl
+ctrl - - -( idto
+idto - - - dto  
+ctrl - - -( iser 
+iser - - - ser
+ser - - -( idto
+  
+ser - - -( imodel
+  
+  
+  
+imodel - - - model
+repo - - -( imodel  
+repo - - - irepo
+ser - - -( irepo 
+ds - - ids
+repo - -( ids
+pers - -( ids
+pers - - ipers
+repo - -( ipers
+
+
+MDBAPI )- - - pers
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 17:01:30 UTC 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>

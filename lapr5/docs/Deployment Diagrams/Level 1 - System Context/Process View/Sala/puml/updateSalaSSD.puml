@@ -1,0 +1,45 @@
+@startuml updateSalaSSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+actor "Gestor de Campus" as GC
+participant RobDroneGo as system <<System(C4)>>
+
+
+GC -> system: I want to update the details of a Sala
+activate system
+
+system --> GC: asks for the ID of the Sala
+deactivate system
+
+GC -> system: inserts the ID of the Sala
+activate system
+
+loop until the desired details are updated
+
+system --> GC: displays a list of information available to update
+deactivate system
+
+GC -> system: selects the information to update
+activate system
+
+system --> GC: asks for the information to update
+deactivate system
+
+GC -> system: inserts the information to update
+activate system
+
+system --> GC: displays the updated information and \ninforms about the operation success
+deactivate system
+
+end loop
+
+deactivate system
+deactivate GC
+
+@enduml
+  

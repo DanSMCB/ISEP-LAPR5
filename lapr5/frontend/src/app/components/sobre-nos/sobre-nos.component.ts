@@ -1,0 +1,15 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-sobre-nos',
+  templateUrl: './sobre-nos.component.html',
+  styleUrls: ['./sobre-nos.component.css']
+})
+
+export class SobreNosComponent {
+  email: string;
+
+  constructor() {
+    this.email = 'info@robdronego.com';
+  }
+}

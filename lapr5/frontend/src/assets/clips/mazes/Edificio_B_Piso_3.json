@@ -1,0 +1,176 @@
+{
+    "maze": {
+        "size": { "width": 22, "depth": 12 },
+        "map": [
+            [0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0],
+            [0,3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1,0],
+            [0,1, 0, 0, 5, 0, 5, 0, 0, 1, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,0],
+            [0,1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,0],
+            [0,1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,0],
+            [0,1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,0],
+            [0,1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,0],
+            [0,1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 1,0],
+            [0,1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 1,0],
+            [0,1, 0, 0, 1, 0, 2, 2, 2, 0, 0, 3, 4, 2, 2, 2, 1, 0, 0, 2, 2, 1,0],
+            [0,1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1,0],
+            [0,2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0,0],
+            [0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0]
+        ],
+        "passagens": [{"edificio": "C", "piso": 4, "exitLocation":  [9,19.7],"startLocation": [11, 0.7]}],
+        "elevador": {"startLocation": [8.0,18], "exitLocation":[8.0,19], "edificio": "B" , "pisos": [1,2], "initialDirection": 270}
+
+    },
+    "ground": {
+        "size": { "width": 22.0, "height": 0.0625, "depth": 12.0 },
+        "segments": { "width": 1, "height": 1, "depth": 1 },
+        "primaryColor": "0xffffff",
+        "maps": {
+            "color": {
+                "url": "./textures/ground_0003_2k_372HqZ/hardwood2_diffuse.jpeg"
+            },
+            "ao": {
+                "url": "./textures/ground_0003_2k_372HqZ/hardwood2_diffuse.jpeg",
+                "intensity": 1.0
+            },
+            "displacement": {
+                "url": "",
+                "scale": 1.0,
+                "bias": 0.0
+            },
+            "normal": {
+                "url": "./textures/ground_0003_2k_372HqZ/hardwood2_diffuse.jpeg",
+                "type": 0,
+                "scale": { "x": 2.0, "y": 2.0 }
+            },
+            "bump": {
+                "url": "",
+                "scale": 1.0
+            },
+            "roughness": {
+                "url": "./textures/ground_0003_2k_372HqZ/hardwood2_diffuse.jpeg",
+                "rough": 1.0
+            }
+        },
+        "wrapS": 1,
+        "wrapT": 1,
+        "repeat": { "u": 4.0, "v": 4.0 },
+        "magFilter": 1,
+        "minFilter": 5,
+        "secondaryColor": "0x6b554b"
+    },
+    "wall": {
+        "segments": { "width": 1, "height": 1 },
+        "primaryColor": "0xffffff",
+        "maps": {
+            "color": {
+                "url": "./textures/concrete_0007_2k_xtGY5J/whiteWall.jpeg"
+            },
+            "ao": {
+                "url": "./textures/concrete_0007_2k_xtGY5J/whiteWall.jpeg",
+                "intensity": 1.0
+            },
+            "displacement": {
+                "url": "",
+                "scale": 1.0,
+                "bias": 0.0
+            },
+            "normal": {
+                "url": "./textures/concrete_0007_2k_xtGY5J/whiteWall.jpeg",
+                "type": 0,
+                "scale": { "x": 2.0, "y": 2.0 }
+                },
+            "bump": {
+                "url": "",
+                "scale": 1.0
+            },
+            "roughness": {
+                "url": "./textures/concrete_0007_2k_xtGY5J/whiteWall.jpeg",
+                "rough": 1.0
+            }
+        },
+        "wrapS": 1,
+        "wrapT": 0,
+        "repeat": { "u": 2.0, "v": 1.0 },
+        "magFilter": 1,
+        "minFilter": 5,
+        "secondaryColor": "0x6b554b"
+    },
+    "door": {
+        "segments": { "width": 1, "height": 1 },
+        "primaryColor": "0xffffff",
+        "maps": {
+            "color": {
+                "url": "./textures/concrete_0007_2k_xtGY5J/door.jpg"
+            },
+            "ao": {
+                "url": "./textures/concrete_0007_2k_xtGY5J/door.jpg",
+                "intensity": 1.0
+            },
+            "displacement": {
+                "url": "",
+                "scale": 1.0,
+                "bias": 0.0
+            },
+            "normal": {
+                "url": "./textures/concrete_0007_2k_xtGY5J/whiteWall.jpeg",
+                "type": 0,
+                "scale": { "x": 2.0, "y": 2.0 }
+                },
+            "bump": {
+                "url": "",
+                "scale": 1.0
+            },
+            "roughness": {
+                "url": "./textures/concrete_0007_2k_xtGY5J/whiteWall.jpeg",
+                "rough": 1.0
+            }
+        },
+        "wrapS": 1,
+        "wrapT": 0,
+        "repeat": { "u": 1.0, "v": 1.0 },
+        "magFilter": 1,
+        "minFilter": 5,
+        "secondaryColor": "0x6b554b"
+    },
+    "elevator": {
+        "segments": { "width": 1, "height": 1 },
+        "primaryColor": "0xffffff",
+        "maps": {
+            "color": {
+                "url": "./textures/concrete_0007_2k_xtGY5J/elevator.png"
+            },
+            "ao": {
+                "url": "./textures/concrete_0007_2k_xtGY5J/elevator.png",
+                "intensity": 1.0
+            },
+            "displacement": {
+                "url": "",
+                "scale": 1.0,
+                "bias": 0.0
+            },
+            "normal": {
+                "url": "./textures/concrete_0007_2k_xtGY5J/whiteWall.jpeg",
+                "type": 0,
+                "scale": { "x": 2.0, "y": 2.0 }
+                },
+            "bump": {
+                "url": "",
+                "scale": 1.0
+            },
+            "roughness": {
+                "url": "./textures/concrete_0007_2k_xtGY5J/whiteWall.jpeg",
+                "rough": 1.0
+            }
+        },
+        "wrapS": 1,
+        "wrapT": 0,
+        "repeat": { "u": 1.0, "v": 1.0 },
+        "magFilter": 1,
+        "minFilter": 5,
+        "secondaryColor": "0x6b554b"
+    },
+    "player": {
+        "initialPosition": [7.0, 6.0],
+        "initialDirection": 0.0
+    }
+}

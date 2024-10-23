@@ -1,0 +1,39 @@
+@startuml updateUserSSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+actor "Utente do Sistema" as US
+participant RobDroneGo as system <<System(C4)>>
+
+
+US -> system: I want to update my details
+activate system
+
+loop until the desired details are updated
+
+system --> US: displays a list of information available to update
+deactivate system
+
+US -> system: selects the information to update
+activate system
+
+system --> US: asks for the information to update
+deactivate system
+
+US -> system: inserts the information to update
+activate system
+
+system --> US: displays the updated information and \ninforms about the operation success
+deactivate system
+
+end loop
+
+deactivate system
+deactivate US
+
+@enduml
+  

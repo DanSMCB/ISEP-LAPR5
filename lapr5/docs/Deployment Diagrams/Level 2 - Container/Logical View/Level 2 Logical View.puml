@@ -1,0 +1,64 @@
+
+@startuml
+component "<<component>>\n<<Context(C4)>>\nRobDroneGo" as c2 {
+  port 1
+  port 2
+  port 3
+  port 4
+  port 5
+  port 6
+  component "<<component>>\nTaskManagement" as tmc{
+    port 7 
+    port 8
+    portout 16
+  }
+  component "<<component>>\nFleetManagement" as fmc{
+    port 9
+    port 10
+    portout 17
+  }
+  component "<<component>>\nCampusManagement" as cmc{
+    port 11
+    port 12
+    portout 18
+  }
+  
+  component "<<component>>\nPlanning" as pc{
+    port 13
+    port 14
+    port 15
+  }
+  component "<<component>>\nUserManagement" as umc
+
+
+}
+
+interface UITarefa as UT
+interface APITarefa as AT
+interface UIGestorFrota as UGF
+interface APIGestorFrota as AGF
+interface UIGestorCampus as UGC
+interface APIGestorCampus as AGC
+
+
+
+
+UT --- 1
+AT --- 2
+UGF --- 3
+AGF --- 4
+UGC --- 5
+AGC --- 6
+
+1 -- 7
+2 -- 8
+3 -- 9
+4 -- 10
+5 -- 11
+6 -- 12
+16 -- 13
+17 -- 14
+18 -- 15
+
+
+@enduml

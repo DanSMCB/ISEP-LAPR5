@@ -1,0 +1,62 @@
+@startuml
+
+left to right direction
+actor "Gestor de Campus" as GC
+
+actor "Gestor de Frota" as GF
+
+
+rectangle RobDroneGo {
+
+    usecase "Criar Edificio" as UC1
+    usecase "Editar Edificio" as UC2
+    usecase "Listar todos os Edifcios" as UC3
+    usecase "Criar Piso de Edificio" as UC4
+    usecase "Editar Piso de Edificio" as UC5
+    usecase "Listar todos os Pisos" as UC6
+    usecase "Criar Passagem" as UC7
+    usecase "Editar Passagem" as UC8
+    usecase "Listar todas as Passagens" as UC9
+    usecase "Criar Elevador" as UC10
+    usecase "Editar Elevador" as UC11
+    usecase "Listar todos os Elevadores" as UC12
+     usecase "Criar Sala" as UC13
+    usecase "Editar Sala" as UC14
+    usecase "Listar todos as Salas" as UC15
+  
+
+    usecase "Criar Robot" as UC16
+    usecase "Editar Robot" as UC17
+    usecase "Listar Robots" as UC18
+    usecase "Criar Tipo de Robot" as UC19
+
+
+
+}
+
+
+GC --> UC1
+GC --> UC2
+GC --> UC3
+GC --> UC4
+GC --> UC5
+GC --> UC6
+GC --> UC7
+GC --> UC8
+GC --> UC9
+GC --> UC10
+GC --> UC11
+GC --> UC12
+GC --> UC13
+GC --> UC14
+GC --> UC15
+
+GF --> UC16
+GF --> UC17
+GF --> UC18
+GF --> UC19
+
+
+
+
+@enduml

@@ -1,0 +1,22 @@
+@startuml listUserSSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+actor "Administrador" as A
+participant RobDroneGo as system <<System(C4)>>
+
+
+A -> system: I want to consult the details of all Useres in the system
+activate system
+
+system --> A: displays a list of Useres and its details
+deactivate system
+
+deactivate system
+deactivate A
+
+@enduml

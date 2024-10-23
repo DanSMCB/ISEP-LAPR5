@@ -1,0 +1,42 @@
+<app-home></app-home>
+
+<div class="container">
+    <div class="menu-container">
+        <div class="section-container input-section">
+            <h2>Listar Pisos no Edifício</h2>
+            <form #elevadorForm="ngForm" (ngSubmit)="getAllPisosByEdificio(edificioEdificio.value)">
+                <div class="form-group">
+                    <label for="new-edificio">Edificio: </label>
+                    <input edificioEdificio="new-edificio" type="number" #edificioEdificio="ngModel" ngModel name="edificioEdificio" />
+                    <div *ngIf="edificioEdificio.errors?.['required']">Edificio é obrigatório</div>
+                    <br>
+                    <button type="submit" class="registar-button" id="registar-button">Submeter</button>
+                    <button class="registar-button" (click)="goBack()">Voltar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="tabela-container">
+        <h2>Lista de Pisos</h2>
+        <table>
+            <tr>
+                <th>Edificio</th>
+                <th>Piso</th>
+                <th>Descricao</th>
+            </tr>
+            <tr *ngFor="let piso of paginatedPisos">
+                <td>{{ piso.edificio }}</td>
+                <td>{{ piso.piso }}</td>
+                <td>{{ piso.descricao }}</td>
+            </tr>
+        </table>
+
+        <!-- Paginação -->
+        <div class="pagination-container">
+            <button (click)="prevPage()" [disabled]="startIndex === 0">Anterior</button>
+            <span class="page-number">Página {{ currentPage }}</span>
+            <button (click)="nextPage()" [disabled]="endIndex >= pisos.length">Próxima</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+@startuml createTarefaSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+
+!pragma teoz true
+box "<<System(C4)>>\n RobDroneGo" #LightSkyBlue
+    box "<<Container(C4)>>\n Task Management" #LightGreen
+
+        box "<<Component(C4)>>\nInterface Adapter Layer" #Cyan
+            participant ITarefaController as  ICTL <<Component(C4)>>
+            participant TarefaController as  CTL <<Component(C4)>>
+            participant TarefaRepository as  DR <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nApplication Services Layer" #Red
+            participant TarefaService as  SV <<Component(C4)>>
+            participant ITarefaService as  ISV <<Component(C4)>>
+            participant ITarefaRepo as  IER <<Component(C4)>>
+        end box
+        box "<<Component(C4)>>\nEntities\Core\Domanin Layer" #Yellow
+            participant "Tarefa : Tarefa" as  tarefa <<Component(C4)>>
+        end box
+    participant "TarefaDTO : TarefaDTO" as  DTO <<Component(C4)>>
+
+    end box
+end box   
+
+
+ -> CTL: POST Post(TarefaDto)
+alt If the Tarefa doesn't exist in the system
+activate CTL
+CTL -> SV : CreateTarefa(TarefaDto)
+activate SV
+
+SV -> tarefa : Create(TarefaDto)
+activate tarefa
+tarefa --> SV : Tarefa
+deactivate tarefa
+
+SV -> DR : save(Tarefa)
+activate DR
+DR --> SV : true
+deactivate DR
+
+SV -> DTO : toEdificioDTO(tarefa)
+activate DTO
+DTO --> SV : TarefaDto
+deactivate DTO
+SV --> CTL : TarefaDto
+deactivate SV
+ <-- CTL : TarefaDto
+
+ <-- CTL: 200 OK
+deactivate CTL
+
+
+
+
+
+else If a Tarefa already exists with the id entered
+
+
+
+
+CTL -> SV : CreateTarefa(TarefaDto)
+activate CTL
+activate SV
+
+SV -> tarefa : Create(TarefaDto)
+activate tarefa
+tarefa --> SV : Tarefa
+deactivate tarefa
+
+SV -> DR : save(Tarefa)
+activate DR
+DR --> SV : false
+deactivate DR
+SV --> CTL : BadRequestException
+deactivate SV
+ <-- CTL : BadRequestException
+
+
+ <-- CTL: 400 BAD REQUEST
+deactivate CTL
+
+
+
+
+else If the attributes do not respect the business rules
+
+
+CTL -> SV : CreateTarefa(TarefaDto)
+activate CTL
+activate SV
+
+SV -> tarefa : Create(TarefaDto)
+activate tarefa
+tarefa --> SV : BusinessRuleValidationException
+deactivate tarefa
+
+SV --> CTL : BusinessRuleValidationException
+deactivate SV
+ <-- CTL : BusinessRuleValidationException
+
+ <-- CTL: 400 BAD REQUEST
+deactivate CTL
+
+
+end
+
+@enduml

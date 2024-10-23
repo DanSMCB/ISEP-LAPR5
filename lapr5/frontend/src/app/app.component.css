@@ -1,0 +1,31 @@
+/* AppComponent's private CSS styles */
+h1 {
+    padding: 3px;
+    text-align: center;
+    background: black;
+    color: #F0A500;
+    font-size: 30px;
+    font-family: arial, sans-serif;
+    font-style: italic;
+
+
+}
+
+nav a {
+    font-family: arial, sans-serif;
+    padding: .5rem 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color:#F4F4F4;
+    background-color: #F0A500;
+    text-align: center;
+}
+
+nav a:hover {
+    color: white;
+    background-color: #CF7500;
+}
+
+nav a.active {
+    background-color: black;
+}

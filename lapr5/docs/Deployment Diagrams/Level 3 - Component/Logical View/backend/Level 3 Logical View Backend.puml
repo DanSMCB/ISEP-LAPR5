@@ -1,0 +1,63 @@
+@startuml
+component "<<component>>\n<<Context(C4)>>\nRobDroneGo" as c2 {
+
+  component "<<component>>\n<<Component(C4)>>\nRoute" as route{
+  }
+  component "<<component>>\n<<Component(C4)>>\nController" as ctrl{
+  }
+  
+  component "<<component>>\n<<Component(C4)>>\nService" as ser{
+    
+  }
+  component "<<component>>\n<<Component(C4)>>\nDTO" as dto{
+    
+  }
+  component "<<component>>\n<<Component(C4)>>\nModel" as model{
+    
+  }
+  component "<<component>>\n<<Component(C4)>>\nRepository" as repo{
+    
+  }
+  component "<<component>>\n<<Component(C4)>>\nPersistence" as pers{
+    
+  }
+  component "<<component>>\n<<Component(C4)>>\nDataSchema" as ds{
+    
+    
+  }
+interface IController as ictrl
+interface IService as iser
+interface IDTO as idto
+interface IRepo as irepo
+interface IModel as imodel
+interface IPersistence as ipers
+interface IDataSchema as ids
+
+}
+
+interface API as API
+interface MONGODBAPI as MDBAPI
+
+API --- route
+route ---( ictrl
+ictrl --- ctrl
+ctrl ---( idto
+idto --- dto  
+ctrl ---( iser 
+iser --- ser
+ser ---( idto
+  
+ser ---( imodel
+
+imodel --- model
+repo ---( imodel  
+repo --- irepo
+ser ---( irepo 
+ds -- ids
+repo --( ids
+pers --( ids
+pers -- ipers
+repo --( ipers
+
+MDBAPI )--- pers
+@enduml

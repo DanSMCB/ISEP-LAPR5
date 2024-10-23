@@ -1,0 +1,49 @@
+<app-home></app-home>
+
+<div class="container">
+    <div class="menu-container">
+        <div class="section-container input-section">
+            <h2>Listar Passagens entre 2 Edifícios</h2>
+            <form #elevadorForm="ngForm" (ngSubmit)="listPassagemBetweenEdificios(edificio1.value, edificio2.value)">
+                <div class="form-group">
+                    <label for="new-edificio1">Edificio1: </label>
+                    <input id="new-edificio1" type="text" #edificio1="ngModel" ngModel name="edificio1" />
+                    <div *ngIf="edificio1.errors?.['required']">Edificio1 é obrigatório</div>
+                    <br>
+                    <label for="new-edificio2">Edificio2: </label>
+                    <input id="new-edificio2" type="number" #edificio2="ngModel" ngModel name="edificio2" />
+                    <div *ngIf="edificio2.errors?.['required']">Edificio2 é obrigatório</div>
+                    <br>
+                    <button type="submit" class="registar-button" id="registar-button">Submeter</button>
+                    <button class="registar-button" (click)="goBack()">Voltar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="tabela-container">
+        <h2>Lista de Passagens</h2>
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Connection</th>
+                </tr>
+                <tr *ngFor="let passagem of paginatedPassagens">
+                    <td>{{ passagem.passagemId }}</td>
+                    <td>
+                        <ul>
+                            <li *ngFor="let connection of passagem.connection">
+                                {{ connection.edificio }} - {{ connection.piso }}
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        <!-- Paginação -->
+        <div class="pagination-container">
+            <button (click)="prevPage()" [disabled]="startIndex === 0">Anterior</button>
+            <span class="page-number">Página {{ currentPage }}</span>
+            <button (click)="nextPage()" [disabled]="endIndex >= passagens.length">Próxima</button>
+        </div>
+    </div>
+</div>

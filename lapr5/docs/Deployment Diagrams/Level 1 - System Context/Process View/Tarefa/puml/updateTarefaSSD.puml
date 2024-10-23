@@ -1,0 +1,35 @@
+@startuml updateTarefaSSD
+autonumber
+
+skinparam sequence {
+ParticipantBorderColor black
+ParticipantBackgroundColor white
+}
+
+actor "Gestor de Tarefas" as GT
+participant RobDroneGo as system <<System(C4)>>
+
+
+GT -> system: I want to update the details of a Tarefa
+activate system
+
+system --> GT: asks for the ID of the Tarefa
+deactivate system
+
+GT -> system: inserts the ID of the Tarefa
+activate system
+
+system --> GT: asks to update the estado of the Tarefa
+deactivate system
+
+GT -> system: inserts the information to update
+activate system
+
+system --> GT: displays the updated information and \ninforms about the operation success
+deactivate system
+
+deactivate system
+deactivate GT
+
+@enduml
+  

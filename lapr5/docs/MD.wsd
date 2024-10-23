@@ -1,0 +1,119 @@
+@startuml MD
+'https://plantuml.com/class-diagram
+hide methods
+skinparam classAttributeIconSize 0
+skinparam nodesep 50
+skinparam ranksep 50
+
+'criar um edificio, exemplo, edificio "B", com um nome opcional e com uma breve descrição (ex., "departamento de engenharia informática") indicando a dimensão máxima de cada piso em termos de células (ex., 10 x 10)
+'o código do edificio é obrigatório, no máximo 5 caracteres, letras e digitos, podendo conter espaços no meio
+'o nome do edificio é opcional, no máximo 50 caracteres alfanuméricos
+'descricao do edificio é opcional e tem no maximo 255 caracteres
+entity Edificio {
+- id
+- codigo
+- nome
+- descricao
+- pisoMaxSize
+}
+
+'cada piso é descrito, concetualmente, pela informação das salas de aulas e gabinetes existentes no piso e sua localização, bem como pela localização dos elevadores e dos corredores de acesso aos outros edifícios.
+entity Piso {
+- id
+- edificio
+- piso
+- descricao
+- passagens [passagem]
+}
+
+entity Elevador {
+- id
+- elevadorId
+- edificio
+- pisos [piso]
+}
+
+'Corredor de acesso entre pisos: Acesso de A para B é igual de B para A bidirecional
+'em cada piso podem existir várias passagens, cada uma para outro edificio, e no mesmo edificio podem existir várias passagens para um outro edificio desde que em pisos diferentes 
+entity Passagem {
+- id
+- connection [edificio, piso]
+}
+
+'categorização dessa sala (Gabinete, Anfiteatro, Laboratório, Outro) e uma breve 'descrição, ex., "Laboratório de 'Engenharia de Qualidade"
+entity Sala {
+- id
+- tamanho
+- nome
+- descricao
+- tipo
+}
+
+entity TipoDeSala {
+- id
+- descricao
+}
+
+'Considere que o ISEP adquire robots de dois tipos:
+
+'  • robisep: robot móvel que se movimenta através de um sistema de rodas podendo
+'deslocar-se nos corredores dos edifícios ou através de elevadores entre pisos de um
+'edifício, mas não consegue subir escadas. O robot pode ir de um edifício para outro, mas
+'só através dos corredores cobertos de ligação entre edifícios1
+'. Os robiseps podem ter instalados sistemas que efetuam diversas tarefas, tais como vigilância ou limpeza do
+'corredor ou ainda acesso a uma sala/gabinete para buscar/entregar um item (por
+'exemplo, um comando de um projetor ou uma caneta para quadro branco).
+
+'  • droneisep: drone que se movimenta no espaço exterior aos edifícios existentes no ISEP.
+'O droneisep pode ir de um ponto para outro ponto do espaço deslocando-se através de
+'trajetos em linha reta permitidos. As tarefas desses drones poderão ser várias, tais como
+'fazer entregas de objetos, vigilância, aquisições de imagem, operações de limpeza de
+'janelas exteriores, etc
+entity Tarefa {
+- id
+- estado
+- tipo
+}
+
+entity TipoDeTarefa {
+- id
+- descricao
+}
+
+'cada Robot possui um número de série do fabricante e que deve ser registado quando se cria o robot no sistema. 
+'cada robot é identificado por um código e um nickname atribuidos pelo administrador. 
+'Por exemplo, um robot da marca X com número de série 1234567 tem o código "picker-0001" e o nickname "Robert" enquanto um outro robot da marca Y com número de série 456789 tem o código "sec-A-001" e o nickname "Jason"
+'apenas existem dois tipos de tarefas conhecidas que o sistema deve suportar: vigilância e entrega de objectos. 
+'quando criam um tipo de robot deve ser possivel identificar qual ou quais destas tarefas esse tipo de robot pode executar.
+'apenas inibido ou desinibido ->  um robot inibido não pode executar tarefas.
+entity Robot {
+- id
+- numeroSerie
+- codigo
+- nickname
+- marca
+- estado
+- tipo
+}
+
+'designacao: roboisep ou droneisep
+'tarefa: vigilância ou entrega de objetos
+entity TipoDeRobot {
+- id
+- designacao
+- tarefas [tarefa]
+}
+
+Edificio "1" - "*" Piso
+Edificio "1" - "0..1" Elevador
+Edificio "1" - "*" Passagem
+Elevador "1" - "*" Piso
+Sala "1" -- "*" Tarefa
+Sala "*" - "1" TipoDeSala
+Piso "1" - "*" Tarefa
+Tarefa "*" - "1" TipoDeTarefa
+Robot "1" - "*" Tarefa
+Piso "0" -- "*" Passagem
+Piso "1" - "*" Sala
+Robot "*" -- "1" TipoDeRobot
+@enduml

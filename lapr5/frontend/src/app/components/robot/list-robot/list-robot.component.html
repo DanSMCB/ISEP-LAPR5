@@ -1,0 +1,29 @@
+<app-home></app-home>
+<div class="tabela-container">
+    <h2>Lista de Robots</h2>
+    <table>
+        <tr>
+            <th>Número de Série</th>
+            <th>Código</th>
+            <th>Nickname</th>
+            <th>Marca</th>
+            <th>Estado</th>
+            <th>Tipo de Robot</th>
+        </tr>
+        <tr *ngFor="let robot of paginatedRobots">
+            <td>{{ robot.numeroSerie }}</td>
+            <td>{{ robot.codigo }}</td>
+            <td>{{ robot.nickname }}</td>
+            <td>{{ robot.marca }}</td>
+            <td>{{ robot.estado }}</td>
+            <td>{{ robot.tipoDeRobot }}</td>
+        </tr>
+    </table>
+    <!-- Paginação -->
+    <div class="pagination-container">
+        <button (click)="prevPage()" [disabled]="startIndex === 0">Anterior</button>
+        <span class="page-number">Página {{ currentPage }}</span>
+        <button (click)="nextPage()" [disabled]="endIndex >= robots.length">Próxima</button>
+    </div>
+    <button class="registar-button" (click)="goBack()">Voltar</button>
+</div>
